@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="bookings.controllers.LauncherController">
+    <ProgressBar fx:id="progressBar" layoutX="200.0" layoutY="307.0" prefWidth="200.0" styleClass="JMetroStyleClass"
+                 stylesheets="@../css/launcher-view.css"/>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="275.0" prefWidth="411.0"
+      spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal"
+      fx:controller="bookings.controllers.LoginController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="msg" text="Log In"/>
+    <HBox alignment="CENTER" prefHeight="0.0" prefWidth="200.0">
+        <RadioButton mnemonicParsing="false" onAction="#radioButtonClicked" selected="true" text="Customer">
+            <toggleGroup>
+                <ToggleGroup fx:id="isAdmin"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="isAdminRB" mnemonicParsing="false" onAction="#radioButtonClicked" text="admin"
+                     toggleGroup="$isAdmin"/>
+    </HBox>
+    <TextField fx:id="usernameTF" promptText="username"/>
+    <TextField fx:id="passwordTF" promptText="password"/>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <Hyperlink fx:id="registerHL" alignment="TOP_LEFT" text="Register"/>
+    </HBox>
+    <Button mnemonicParsing="false" onAction="#onLoginBtnClicked" text="Log In"/>
+</VBox>
