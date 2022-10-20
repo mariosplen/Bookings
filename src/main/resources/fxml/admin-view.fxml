@@ -6,7 +6,7 @@
 <?import java.lang.String?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="700.0" prefWidth="1366.0"
             style="-fx-background-color: #00BCD4;" xmlns="http://javafx.com/javafx/11.0.14-internal"
-            fx:controller="bookings.controllers.UserPageController">
+            fx:controller="bookings.controllers.AdminPageController">
 
 
     <Label fx:id="usernameL" layoutX="664.0" layoutY="122.0" text="Label"/>

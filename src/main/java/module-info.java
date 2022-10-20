@@ -4,6 +4,7 @@ module com.github.mariosplen.bookings {
     requires java.sql;
     requires org.xerial.sqlitejdbc;
     requires org.jfxtras.styles.jmetro;
+    requires java.sql.rowset;
 
     exports bookings.controllers;
     exports bookings.application;

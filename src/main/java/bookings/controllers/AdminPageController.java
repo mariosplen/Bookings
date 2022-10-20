@@ -6,8 +6,7 @@ import javafx.scene.control.Label;
 
 import java.sql.SQLException;
 
-public class UserPageController {
-
+public class AdminPageController {
     public Label usernameL;
     String userName;
 
@@ -19,6 +18,7 @@ public class UserPageController {
     // This runs after supplying the Controller with the username(id)
     public void secondInitialize() throws SQLException, ClassNotFoundException {
 
+
         User user = UserDAO.searchUser(userName);
         if (user != null) {
             usernameL.setText(user.getName());
@@ -26,14 +26,4 @@ public class UserPageController {
 
 
     }
-
-
 }
-
-
-
-
-
-
-
-

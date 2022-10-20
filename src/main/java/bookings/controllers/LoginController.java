@@ -1,6 +1,7 @@
 package bookings.controllers;
 
-import bookings.application.DbConnection;
+import bookings.models.User;
+import bookings.models.UserDAO;
 import bookings.util.Views;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,9 +16,6 @@ import jfxtras.styles.jmetro.JMetro;
 import jfxtras.styles.jmetro.Style;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginController {
@@ -34,59 +32,53 @@ public class LoginController {
 
 
     @FXML
-    public void onLoginBtnClicked() throws IOException, SQLException {
-        Connection con = DbConnection.Connection();
-        if (con == null) throw new SQLException("con is null");
+    public void onLoginBtnClicked() throws IOException, SQLException, ClassNotFoundException {
 
-        PreparedStatement ps;
-        ResultSet rs;
+        User user = UserDAO.loginUser(usernameTF.getText(), passwordTF.getText());
 
-        ps = con.prepareStatement("SELECT * FROM users WHERE username = ? and password = ?");
-        ps.setString(1, usernameTF.getText());
-        ps.setString(2, passwordTF.getText());
+        if (user == null) {
+            msg.setText("Wrong Password Or Username");
+            return;
+        }
+        if (user.isIsAdmin() != isAdminRB.isSelected()) {
+            msg.setText("Wrong Password Or Username");
+            return;
+        }
 
-        rs = ps.executeQuery();
-        if (rs.next()) {
-            Stage stage = new Stage();
-            FXMLLoader loader = new FXMLLoader();
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader();
+        Parent root;
 
-
-            if (isAdminRB.isSelected() && rs.getBoolean("is_admin")) {
-                loader.setLocation(getClass().getResource(Views.ADMIN));
-                stage.setTitle("Admin Page");
-            } else if (!isAdminRB.isSelected() && !rs.getBoolean("is_admin")) {
-                loader.setLocation(getClass().getResource(Views.USER));
-                stage.setTitle("User Page");
-            } else {
-                msg.setText("Wrong Password Or UserID");
-                ps.close();
-                rs.close();
-                con.close();
-                return;
-            }
-
+        // TODO: FIX DUPLICATE CODE
+        if (isAdminRB.isSelected() && user.isIsAdmin()) {
+            loader.setLocation(getClass().getResource(Views.ADMIN));
+            stage.setTitle("Admin Page");
             loader.load();
+            root = loader.getRoot();
+            AdminPageController apc = loader.getController();
+            apc.GetUserID(usernameTF.getText());
+            apc.secondInitialize();
 
-            Parent root = loader.getRoot();
+        } else {
+            loader.setLocation(getClass().getResource(Views.USER));
+            stage.setTitle("User Page");
+            loader.load();
+            root = loader.getRoot();
             UserPageController upc = loader.getController();
             upc.GetUserID(usernameTF.getText());
             upc.secondInitialize();
-
-            Scene scene = new Scene(root);
-
-            JMetro jMetro = new JMetro(Style.LIGHT);
-            jMetro.setScene(scene);
-
-            stage.setScene(scene);
-            stage.show();
-
-            ((Stage) usernameTF.getScene().getWindow()).close();
-        } else {
-            msg.setText("Wrong Password Or UserID");
         }
-        ps.close();
-        rs.close();
-        con.close();
+
+
+        Scene scene = new Scene(root);
+
+        JMetro jMetro = new JMetro(Style.LIGHT);
+        jMetro.setScene(scene);
+
+        stage.setScene(scene);
+        stage.show();
+
+        ((Stage) usernameTF.getScene().getWindow()).close();
     }
 
 
