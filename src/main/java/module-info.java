@@ -8,6 +8,7 @@ module com.github.mariosplen.bookings {
 
     exports bookings.controllers;
     exports bookings.application;
+    exports bookings.models;
 
     opens bookings.controllers to javafx.fxml;
 }
