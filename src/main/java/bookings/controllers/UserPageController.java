@@ -2,32 +2,30 @@ package bookings.controllers;
 
 import bookings.models.User;
 import bookings.models.UserDAO;
+import bookings.util.PageController;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import java.sql.SQLException;
 
-public class UserPageController {
+public class UserPageController implements PageController {
 
+    @FXML
     public Label usernameL;
-    String userName;
+    private String userName;
 
-    public void GetUserID(String userName) {
+    @Override
+    public void setUsername(String userName) {
         this.userName = userName;
-
     }
 
-    // This runs after supplying the Controller with the username(id)
-    public void secondInitialize() throws SQLException, ClassNotFoundException {
-
+    @Override
+    public void lateInitialize() throws SQLException, ClassNotFoundException {
         User user = UserDAO.searchUser(userName);
         if (user != null) {
             usernameL.setText(user.getName());
         }
-
-
     }
-
-
 }
 
 

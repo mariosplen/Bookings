@@ -35,8 +35,8 @@ public class LauncherController implements Initializable {
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
 
-            JMetro jMetro = new JMetro(Style.LIGHT);
-            jMetro.setScene(scene);
+//            JMetro jMetro = new JMetro(Style.LIGHT);
+//            jMetro.setScene(scene);
 
             stage.setScene(scene);
             stage.show();

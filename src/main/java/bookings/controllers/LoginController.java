@@ -2,10 +2,10 @@ package bookings.controllers;
 
 import bookings.models.User;
 import bookings.models.UserDAO;
+import bookings.util.PageController;
 import bookings.util.Views;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -45,37 +45,31 @@ public class LoginController {
             return;
         }
 
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader();
-        Parent root;
 
-        // TODO: FIX DUPLICATE CODE
+        FXMLLoader loader = new FXMLLoader();
+        Stage stage = new Stage();
+
         if (isAdminRB.isSelected() && user.isIsAdmin()) {
             loader.setLocation(getClass().getResource(Views.ADMIN));
             stage.setTitle("Admin Page");
-            loader.load();
-            root = loader.getRoot();
-            AdminPageController apc = loader.getController();
-            apc.GetUserID(usernameTF.getText());
-            apc.secondInitialize();
-
         } else {
             loader.setLocation(getClass().getResource(Views.USER));
             stage.setTitle("User Page");
-            loader.load();
-            root = loader.getRoot();
-            UserPageController upc = loader.getController();
-            upc.GetUserID(usernameTF.getText());
-            upc.secondInitialize();
         }
 
+        loader.load();
+        PageController pageController = loader.getController();
+        pageController.setUsername(usernameTF.getText());
+        pageController.lateInitialize();
 
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(loader.getRoot());
 
-        JMetro jMetro = new JMetro(Style.LIGHT);
-        jMetro.setScene(scene);
+//        JMetro jMetro = new JMetro(Style.LIGHT);
+//        jMetro.setScene(scene);
 
         stage.setScene(scene);
+        stage.setMinHeight(700);
+        stage.setMinWidth(1200);
         stage.show();
 
         ((Stage) usernameTF.getScene().getWindow()).close();

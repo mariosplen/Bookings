@@ -5,8 +5,8 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Rooms {
 
-   private SimpleIntegerProperty id;
-   private SimpleStringProperty category;
+   private final SimpleIntegerProperty id;
+   private final SimpleStringProperty category;
 
     public Rooms() {
         this.id = new SimpleIntegerProperty();
