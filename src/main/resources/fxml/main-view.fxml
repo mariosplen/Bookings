@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import java.lang.String?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml" id="AnchorPane" prefHeight="768.0" prefWidth="1366.0"
-            style="-fx-background-color: #00BCD4;" xmlns="http://javafx.com/javafx"
-            fx:controller="bookings.controllers.AdminPageController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="768.0" prefWidth="1366.0"
+            style="-fx-background-color: #00BCD4;" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            fx:controller="bookings.controllers.MainController">
 
 
     <Label fx:id="usernameL" layoutX="664.0" layoutY="122.0" text="Label"/>
@@ -26,7 +26,7 @@
         </items>
 
     </ComboBox>
-    <Label layoutX="595.0" layoutY="238.0" text="RoomType" />
+    <Label layoutX="595.0" layoutY="238.0" text="RoomType"/>
     <TableView fx:id="roomsTV" layoutX="315.0" layoutY="315.0" prefHeight="200.0" prefWidth="194.0">
         <columns>
             <TableColumn fx:id="roomsTVId" prefWidth="92.00006103515625" text="roomsID"/>

@@ -4,7 +4,6 @@ import bookings.models.Rooms;
 import bookings.models.RoomsDAO;
 import bookings.models.User;
 import bookings.models.UserDAO;
-import bookings.util.PageController;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,7 +16,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class AdminPageController implements PageController, Initializable {
+public class MainController implements Initializable {
 
     public Label usernameL;
     @FXML
@@ -28,14 +27,12 @@ public class AdminPageController implements PageController, Initializable {
     private TableColumn<Rooms, String> roomsTVCategory;
     private String username;
 
-    @Override
     public void setUsername(String username) {
         this.username = username;
     }
 
-    @Override
     public void lateInitialize() throws SQLException, ClassNotFoundException {
-        User user = UserDAO.searchUser(username);
+        User user = UserDAO.getUser(username);
         if (user != null) {
             usernameL.setText(user.getName());
         }

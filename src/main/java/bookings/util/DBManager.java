@@ -14,47 +14,31 @@ public class DBManager {
         conn = DriverManager.getConnection(connStr);
     }
 
-
     public static void dbDisconnect() throws SQLException {
         if (conn != null && !conn.isClosed()) {
             conn.close();
         }
     }
 
-    public static ResultSet dbExecuteQuery(String queryStmt) throws SQLException, ClassNotFoundException {
-        Statement stmt = null;
-        ResultSet resultSet = null;
-        CachedRowSet crs;
-        try {
-            dbConnect();
-            stmt = conn.createStatement();
-            resultSet = stmt.executeQuery(queryStmt);
-            crs = RowSetProvider.newFactory().createCachedRowSet();
-            crs.populate(resultSet);
-        } finally {
-            if (resultSet != null) {
-                resultSet.close();
-            }
-            if (stmt != null) {
-                stmt.close();
-            }
-            dbDisconnect();
+    public static ResultSet dbExecuteQuery(String queryStmt, Object... varArgs) throws SQLException, ClassNotFoundException {
+        dbConnect();
+
+        PreparedStatement stmt = conn.prepareStatement(queryStmt);
+        for (int i = 0; i < varArgs.length; i++) {
+            stmt.setObject(i + 1, varArgs[i]);
         }
+
+        ResultSet resultSet = stmt.executeQuery();
+        CachedRowSet crs = RowSetProvider.newFactory().createCachedRowSet();
+        crs.populate(resultSet);
+
+        if (resultSet != null) {
+            resultSet.close();
+        }
+        stmt.close();
+        dbDisconnect();
         return crs;
     }
 
-    public static void dbExecuteUpdate(String sqlStmt) throws SQLException, ClassNotFoundException {
-        Statement stmt = null;
-        try {
-            dbConnect();
-            stmt = conn.createStatement();
-            stmt.executeUpdate(sqlStmt);
-        } finally {
-            if (stmt != null) {
-                stmt.close();
-            }
-            dbDisconnect();
-        }
-    }
 }
 

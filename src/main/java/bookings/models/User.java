@@ -11,7 +11,7 @@ public class User {
     private final StringProperty name;
     private final StringProperty email;
     private final StringProperty phone;
-    private final BooleanProperty isAdmin;
+    private final BooleanProperty perm;
 
     public User() {
         this.username = new SimpleStringProperty();
@@ -19,7 +19,7 @@ public class User {
         this.name = new SimpleStringProperty();
         this.email = new SimpleStringProperty();
         this.phone = new SimpleStringProperty();
-        this.isAdmin = new SimpleBooleanProperty();
+        this.perm = new SimpleBooleanProperty();
     }
 
     public String getUsername() {
@@ -82,15 +82,15 @@ public class User {
         return phone;
     }
 
-    public boolean isIsAdmin() {
-        return isAdmin.get();
+    public boolean getPerm() {
+        return perm.get();
     }
 
-    public void setIsAdmin(boolean isAdmin) {
-        this.isAdmin.set(isAdmin);
+    public void setPerm(boolean perm) {
+        this.perm.set(perm);
     }
 
-    public BooleanProperty isAdminProperty() {
-        return isAdmin;
+    public BooleanProperty permProperty() {
+        return perm;
     }
 }
