@@ -27,25 +27,23 @@ public class UserDAO {
         return getUsersFromRS(rsUsers);
     }
 
-    public static Boolean login(String username, String password) throws SQLException, ClassNotFoundException {
+    public static User login(String username, String password) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * FROM users WHERE username = ? AND password = ?";
         ResultSet rsUser = DBManager.dbExecuteQuery(selectStmt, username, password);
 
         if (rsUser.next()) {
-            getUserFromRs(rsUser);
-            return true;
+            return getUserFromRs(rsUser);
         }
-        return false;
+        return null;
+
     }
 
     public static User getUserFromRs(ResultSet rs) throws SQLException {
         User user = new User();
+        user.setId(rs.getInt("id"));
         user.setUsername(rs.getString("username"));
         user.setPassword(rs.getString("password"));
-        user.setName(rs.getString("name"));
-        user.setEmail(rs.getString("EMAIL"));
-        user.setPhone(rs.getString("phone"));
-        user.setPerm(rs.getBoolean("is_admin"));
+        user.setPrivLevel(rs.getInt("privilege_level"));
 
         return user;
     }

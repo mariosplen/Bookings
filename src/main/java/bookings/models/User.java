@@ -1,25 +1,34 @@
 package bookings.models;
 
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class User {
+    private final IntegerProperty id;
     private final StringProperty username;
     private final StringProperty password;
-    private final StringProperty name;
-    private final StringProperty email;
-    private final StringProperty phone;
-    private final BooleanProperty perm;
+    private final IntegerProperty privLevel;
 
     public User() {
+        this.id = new SimpleIntegerProperty();
         this.username = new SimpleStringProperty();
         this.password = new SimpleStringProperty();
-        this.name = new SimpleStringProperty();
-        this.email = new SimpleStringProperty();
-        this.phone = new SimpleStringProperty();
-        this.perm = new SimpleBooleanProperty();
+        this.privLevel = new SimpleIntegerProperty();
+    }
+
+
+    public int getId() {
+        return id.get();
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
     }
 
     public String getUsername() {
@@ -46,51 +55,15 @@ public class User {
         return password;
     }
 
-    public String getName() {
-        return name.get();
+    public int getPrivLevel() {
+        return privLevel.get();
     }
 
-    public void setName(String name) {
-        this.name.set(name);
+    public void setPrivLevel(int privLevel) {
+        this.privLevel.set(privLevel);
     }
 
-    public StringProperty nameProperty() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email.get();
-    }
-
-    public void setEmail(String email) {
-        this.email.set(email);
-    }
-
-    public StringProperty emailProperty() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone.get();
-    }
-
-    public void setPhone(String phone) {
-        this.phone.set(phone);
-    }
-
-    public StringProperty phoneProperty() {
-        return phone;
-    }
-
-    public boolean getPerm() {
-        return perm.get();
-    }
-
-    public void setPerm(boolean perm) {
-        this.perm.set(perm);
-    }
-
-    public BooleanProperty permProperty() {
-        return perm;
+    public IntegerProperty privLevelProperty() {
+        return privLevel;
     }
 }

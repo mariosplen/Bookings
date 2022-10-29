@@ -1,22 +1,20 @@
 package bookings.controllers;
 
+import bookings.models.User;
 import bookings.models.UserDAO;
 import bookings.util.Views;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
-public class LoginController implements Initializable {
+public class LoginController {
 
     @FXML
     public Label msg;
@@ -30,50 +28,25 @@ public class LoginController implements Initializable {
     private TextField passwordTF;
 
 
-
     @FXML
     public void onLoginBtnClicked() throws IOException, SQLException, ClassNotFoundException {
 
-        Boolean login = UserDAO.login(usernameTF.getText(), passwordTF.getText());
+        User user = UserDAO.login(usernameTF.getText(), passwordTF.getText());
 
-        if (!login) {
+        if (user == null) {
             msg.setText("Wrong Password Or Username");
             return;
         }
 
-
-        FXMLLoader loader = new FXMLLoader();
-        Stage stage = new Stage();
-
-        loader.setLocation(getClass().getResource(Views.MAIN));
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.MAIN));
         loader.load();
+        BorderPane root = loader.getRoot();
+
         MainController mainController = loader.getController();
-        mainController.setUsername(usernameTF.getText());
-        mainController.lateInitialize();
-
-        Scene scene = new Scene(loader.getRoot());
-
-        //        JMetro jMetro = new JMetro(Style.LIGHT);
-        //        jMetro.setScene(scene);
-
-        stage.setScene(scene);
-        stage.setMinHeight(700);
-        stage.setMinWidth(1200);
-        stage.show();
+        mainController.setRoot(root);
+        mainController.setUser(user);
 
         ((Stage) usernameTF.getScene().getWindow()).close();
     }
 
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Print usernames and passwords to console
-        try {
-            UserDAO.getUsers().forEach(user -> System.out.println(user.getUsername() + " " + user.getPassword() + " is " + "perm: " + user.getPerm()));
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
