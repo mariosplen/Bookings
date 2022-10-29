@@ -1,7 +1,7 @@
 package bookings.controllers;
 
-import bookings.models.Rooms;
-import bookings.models.RoomsDAO;
+import bookings.models.Room;
+import bookings.models.RoomDAO;
 import bookings.models.User;
 import bookings.models.UserDAO;
 import javafx.collections.ObservableList;
@@ -20,11 +20,11 @@ public class MainController implements Initializable {
 
     public Label usernameL;
     @FXML
-    private TableView<Rooms> roomsTV;
+    private TableView<Room> roomsTV;
     @FXML
-    private TableColumn<Rooms, Integer> roomsTVId;
+    private TableColumn<Room, Integer> roomsTVId;
     @FXML
-    private TableColumn<Rooms, String> roomsTVCategory;
+    private TableColumn<Room, String> roomsTVCategory;
     private String username;
 
     public void setUsername(String username) {
@@ -40,10 +40,10 @@ public class MainController implements Initializable {
 
 
     public void tableViewValues() throws SQLException, ClassNotFoundException {
-        ObservableList<Rooms> roomsObservableList = RoomsDAO.returnRooms();
+        ObservableList<Room> roomObservableList = RoomDAO.getRooms();
         roomsTVId.setCellValueFactory(new PropertyValueFactory<>("id"));
         roomsTVCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
-        roomsTV.setItems(roomsObservableList);
+        roomsTV.setItems(roomObservableList);
     }
 
     @Override

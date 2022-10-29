@@ -3,12 +3,12 @@ package bookings.models;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Rooms {
+public class Room {
 
-   private final SimpleIntegerProperty id;
-   private final SimpleStringProperty category;
+    private final SimpleIntegerProperty id;
+    private final SimpleStringProperty category;
 
-    public Rooms() {
+    public Room() {
         this.id = new SimpleIntegerProperty();
         this.category = new SimpleStringProperty();
     }
