@@ -20,6 +20,8 @@ public class Bookings extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Views.LAUNCHER));
         Scene scene = new Scene(fxmlLoader.load());
+
+        // Using jMetro for the themed ProgressBar
         JMetro jMetro = new JMetro(Style.LIGHT);
         jMetro.setScene(scene);
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="bookings.controllers.CalendarController">
+    <center>
+        <VBox alignment="CENTER" prefHeight="9999999.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="calendarTV" layoutX="-2.0" layoutY="100.0" prefHeight="9.999999999E9"
+                       prefWidth="9.999999999E9"/>
+            <Button layoutX="265.0" layoutY="369.0" mnemonicParsing="false" onAction="#onSearchClicked" text="Search"/>
+        </VBox>
+    </center>
+</BorderPane>

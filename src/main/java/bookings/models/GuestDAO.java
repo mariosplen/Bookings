@@ -19,14 +19,9 @@ public class GuestDAO {
 
 
     public static Guest getGuestFromRs(ResultSet rs) throws SQLException {
-        Guest guest = new Guest();
-        guest.setId(rs.getInt("id"));
-        guest.setName(rs.getString("name"));
-        guest.setPhone(rs.getString("phone"));
-        guest.setEmail(rs.getString("email"));
-        guest.setIsGroup(rs.getBoolean("group"));
 
-        return guest;
+
+        return new Guest(rs.getInt("id"), rs.getString("name"), rs.getString("phone"), rs.getString("email"), rs.getBoolean("group"));
     }
 
     public static ObservableList<Guest> getGuestsFromRs(ResultSet rs) throws SQLException {
@@ -34,7 +29,6 @@ public class GuestDAO {
         while (rs.next()) {
             guestsList.add(getGuestFromRs(rs));
         }
-
         return guestsList;
     }
 

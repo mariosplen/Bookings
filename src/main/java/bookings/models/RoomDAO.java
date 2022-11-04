@@ -19,13 +19,8 @@ public class RoomDAO {
 
 
     public static Room getRoomFromRs(ResultSet rs) throws SQLException {
-        Room room = new Room();
-        room.setId(rs.getInt("id"));
-        room.setCategory(rs.getString("category"));
-        room.setIsClean(rs.getBoolean("clean"));
-        room.setIsAvailable(rs.getBoolean("available"));
 
-        return room;
+        return new Room(rs.getInt("id"), rs.getString("category"), rs.getBoolean("clean"), rs.getBoolean("available"));
     }
 
     public static ObservableList<Room> getRoomsFromRs(ResultSet rs) throws SQLException {

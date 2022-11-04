@@ -8,7 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,15 +18,12 @@ public class LoginController {
 
     @FXML
     public Label msg;
-
     @FXML
     public Hyperlink registerHL;
-
     @FXML
     private TextField usernameTF;
     @FXML
     private TextField passwordTF;
-
 
     @FXML
     public void onLoginBtnClicked() throws IOException, SQLException, ClassNotFoundException {
@@ -39,14 +36,16 @@ public class LoginController {
         }
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.MAIN));
-        loader.load();
-        BorderPane root = loader.getRoot();
 
+        // MainController Initializer launched
+        Pane root = loader.load();
+
+        // Pass parameters to MainController
         MainController mainController = loader.getController();
         mainController.setRoot(root);
-        mainController.setUser(user);
+        //        mainController.setUser(user);
 
+        // Close current window
         ((Stage) usernameTF.getScene().getWindow()).close();
     }
-
 }

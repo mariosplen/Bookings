@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <AnchorPane
         xmlns:fx="http://javafx.com/fxml/1"
         xmlns="http://javafx.com/javafx/17.0.2-ea"
