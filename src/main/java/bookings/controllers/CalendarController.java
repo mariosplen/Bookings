@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -25,23 +26,29 @@ import java.util.*;
 
 public class CalendarController implements Initializable {
     public TableView calendarTV;
+    public DatePicker fromDP;
+    public DatePicker toDP;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        fromDP.setValue(LocalDate.parse("2022-10-30"));
+        toDP.setValue(LocalDate.parse("2022-11-11"));
 
     }
 
     @FXML
     public void onSearchClicked() throws SQLException, ClassNotFoundException {
+        calendarTV.getItems().clear();
+        calendarTV.getColumns().clear();
+
         List<String> columns = new ArrayList<>(Arrays.asList("RoomId", "Category"));
 
         ObservableList<Room> rooms = RoomDAO.getRooms();
         Map<Integer, List<LocalDate>> roomBookDates = BookDAO.getRoomBookDates();
 
-        LocalDate fromDate = LocalDate.parse("2022-10-30");
-        LocalDate toDate = LocalDate.parse("2022-11-11");
+        LocalDate fromDate = fromDP.getValue();
+        LocalDate toDate = toDP.getValue();
 
         List<LocalDate> dates = new ArrayList<>(fromDate.datesUntil(toDate).toList());
         dates.add(toDate);
@@ -54,6 +61,7 @@ public class CalendarController implements Initializable {
         for (int i = 0; i < columns.size(); i++) {
             final int finalIdx = i;
             TableColumn<ObservableList<ColoredItem>, ColoredItem> column = new TableColumn<>(columns.get(i));
+            column.setSortable(false);
             column.setCellValueFactory(param -> Bindings.valueAt(param.getValue(), finalIdx));
             column.setCellFactory(tv -> new TableCell<>() {
 
@@ -70,7 +78,10 @@ public class CalendarController implements Initializable {
                     } else {
                         // bind background and text to the item properties
                         textProperty().bind(item.valueProperty());
-                        backgroundProperty().bind(Bindings.createObjectBinding(() -> new Background(new BackgroundFill(item.getBackground(), CornerRadii.EMPTY, Insets.EMPTY)), item.backgroundProperty()));
+                        backgroundProperty().bind(Bindings.createObjectBinding(() -> new Background(new BackgroundFill(
+                                item.getBackground(),
+                                CornerRadii.EMPTY,
+                                Insets.EMPTY)), item.backgroundProperty()));
                     }
                 }
 
@@ -92,7 +103,8 @@ public class CalendarController implements Initializable {
                     columnIdx[0]++;
                 } else {
                     if (roomBookDates.containsKey(room.id())) {
-                        if (roomBookDates.get(room.id()).contains(LocalDate.parse(((TableColumn<ObservableList<ColoredItem>, ColoredItem>) column).getText()))) {
+                        if (roomBookDates.get(room.id())
+                                .contains(LocalDate.parse(((TableColumn<ObservableList<ColoredItem>, ColoredItem>) column).getText()))) {
                             rowItems.add(new ColoredItem("", Color.RED));
                         } else {
                             rowItems.add(new ColoredItem("", Color.GREEN));

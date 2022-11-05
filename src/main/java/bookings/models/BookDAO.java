@@ -25,7 +25,19 @@ public class BookDAO {
     public static Book getBookFromRs(ResultSet rs) throws SQLException {
 
 
-        return new Book(rs.getInt("id"), rs.getInt("room_id"), rs.getInt("guest_id"), LocalDate.parse(rs.getString("check_in")), LocalDate.parse(rs.getString("check_out")), rs.getString("status"), LocalDate.parse(rs.getString("date")), rs.getBoolean("prepayment_offer"), rs.getBoolean("prepayment_phone_charge"), rs.getString("payment_method"), rs.getString("card_number"), rs.getString("card_vcc"), rs.getInt("total_price"));
+        return new Book(rs.getInt("id"),
+                        rs.getInt("room_id"),
+                        rs.getInt("guest_id"),
+                        LocalDate.parse(rs.getString("check_in")),
+                        LocalDate.parse(rs.getString("check_out")),
+                        rs.getString("status"),
+                        LocalDate.parse(rs.getString("date")),
+                        rs.getBoolean("prepayment_offer"),
+                        rs.getBoolean("prepayment_phone_charge"),
+                        rs.getString("payment_method"),
+                        rs.getString("card_number"),
+                        rs.getString("card_vcc"),
+                        rs.getInt("total_price"));
     }
 
     public static ObservableList<Book> getBooksFromRS(ResultSet rs) throws SQLException {

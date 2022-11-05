@@ -39,7 +39,10 @@ public class UserDAO {
     }
 
     public static User getUserFromRs(ResultSet rs) throws SQLException {
-        return new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getInt("privilege_level"));
+        return new User(rs.getInt("id"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getInt("privilege_level"));
     }
 
     public static ObservableList<User> getUsersFromRS(ResultSet rs) throws SQLException {

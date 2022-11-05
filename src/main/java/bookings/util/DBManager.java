@@ -20,7 +20,9 @@ public class DBManager {
         }
     }
 
-    public static ResultSet dbExecuteQuery(String queryStmt, Object... varArgs) throws SQLException, ClassNotFoundException {
+    public static ResultSet dbExecuteQuery(
+            String queryStmt, Object... varArgs
+    ) throws SQLException, ClassNotFoundException {
         dbConnect();
         PreparedStatement stmt = conn.prepareStatement(queryStmt);
 

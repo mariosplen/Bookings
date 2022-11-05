@@ -5,10 +5,10 @@ import bookings.models.UserDAO;
 import bookings.util.Views;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,15 +35,19 @@ public class LoginController {
             return;
         }
 
+        // Initialize controller
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.MAIN));
+        Scene scene = new Scene(loader.load());
 
-        // MainController Initializer launched
-        Pane root = loader.load();
-
-        // Pass parameters to MainController
+        // Pass parameters to controller
         MainController mainController = loader.getController();
-        mainController.setRoot(root);
-        //        mainController.setUser(user);
+        mainController.setUser(user);
+
+        // Set scene to new window
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+        stage.setResizable(false);
 
         // Close current window
         ((Stage) usernameTF.getScene().getWindow()).close();
