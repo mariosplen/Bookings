@@ -11,26 +11,24 @@ import java.sql.SQLException;
 public class RoomDAO {
 
     public static ObservableList<Room> getRooms() throws SQLException, ClassNotFoundException {
-        String queryRooms = "SELECT * FROM rooms";
-        ResultSet rs = DBManager.dbExecuteQuery(queryRooms);
+        String query = "SELECT * FROM rooms";
+        ResultSet rs = DBManager.dbExecuteQuery(query);
 
-        return getRoomsFromRs(rs);
+        ObservableList<Room> rooms = getRoomsFromRs(rs);
+        rs.close();
+        return rooms;
     }
 
 
     public static Room getRoomFromRs(ResultSet rs) throws SQLException {
-
         return new Room(rs.getInt("id"), rs.getString("category"), rs.getBoolean("clean"), rs.getBoolean("available"));
     }
 
     public static ObservableList<Room> getRoomsFromRs(ResultSet rs) throws SQLException {
-        ObservableList<Room> roomList = FXCollections.observableArrayList();
+        ObservableList<Room> rooms = FXCollections.observableArrayList();
         while (rs.next()) {
-            roomList.add(getRoomFromRs(rs));
+            rooms.add(getRoomFromRs(rs));
         }
-
-        return roomList;
+        return rooms;
     }
-
-
 }

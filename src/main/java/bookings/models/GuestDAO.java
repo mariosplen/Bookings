@@ -11,16 +11,16 @@ import java.sql.SQLException;
 public class GuestDAO {
 
     public static ObservableList<Guest> getGuests() throws SQLException, ClassNotFoundException {
-        String queryGuests = "SELECT * FROM guests";
-        ResultSet rs = DBManager.dbExecuteQuery(queryGuests);
+        String query = "SELECT * FROM guests";
+        ResultSet rs = DBManager.dbExecuteQuery(query);
 
-        return getGuestsFromRs(rs);
+        ObservableList<Guest> guests = getGuestsFromRs(rs);
+        rs.close();
+        return guests;
     }
 
 
     public static Guest getGuestFromRs(ResultSet rs) throws SQLException {
-
-
         return new Guest(rs.getInt("id"),
                          rs.getString("name"),
                          rs.getString("phone"),
@@ -29,11 +29,11 @@ public class GuestDAO {
     }
 
     public static ObservableList<Guest> getGuestsFromRs(ResultSet rs) throws SQLException {
-        ObservableList<Guest> guestsList = FXCollections.observableArrayList();
+        ObservableList<Guest> guests = FXCollections.observableArrayList();
         while (rs.next()) {
-            guestsList.add(getGuestFromRs(rs));
+            guests.add(getGuestFromRs(rs));
         }
-        return guestsList;
+        return guests;
     }
 
 

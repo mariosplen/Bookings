@@ -15,16 +15,16 @@ import java.util.Map;
 public class BookDAO {
 
     public static ObservableList<Book> getBooks() throws SQLException, ClassNotFoundException {
-        String queryBooks = "SELECT * FROM books";
-        ResultSet rs = DBManager.dbExecuteQuery(queryBooks);
+        String query = "SELECT * FROM books";
+        ResultSet rs = DBManager.dbExecuteQuery(query);
+        ObservableList<Book> books = getBooksFromRS(rs);
+        rs.close();
 
-        return getBooksFromRS(rs);
+        return books;
     }
 
 
     public static Book getBookFromRs(ResultSet rs) throws SQLException {
-
-
         return new Book(rs.getInt("id"),
                         rs.getInt("room_id"),
                         rs.getInt("guest_id"),
@@ -41,18 +41,17 @@ public class BookDAO {
     }
 
     public static ObservableList<Book> getBooksFromRS(ResultSet rs) throws SQLException {
-        ObservableList<Book> bookList = FXCollections.observableArrayList();
+        ObservableList<Book> books = FXCollections.observableArrayList();
         while (rs.next()) {
-            bookList.add(getBookFromRs(rs));
+            books.add(getBookFromRs(rs));
         }
-        return bookList;
+        return books;
     }
 
     public static Map<Integer, List<LocalDate>> getRoomBookDates() throws SQLException, ClassNotFoundException {
-        String queryBooks = "SELECT room_id, check_in, check_out FROM books ";
+        String query = "SELECT room_id, check_in, check_out FROM books ";
 
-        ResultSet rs = DBManager.dbExecuteQuery(queryBooks);
-
+        ResultSet rs = DBManager.dbExecuteQuery(query);
 
         Map<Integer, List<LocalDate>> roomBookDates = new HashMap<>();
         while (rs.next()) {
@@ -70,6 +69,7 @@ public class BookDAO {
 
 
         }
+        rs.close();
         return roomBookDates;
     }
 }

@@ -11,29 +11,37 @@ public class UserDAO {
 
 
     public static User getUser(String username) throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * FROM users WHERE username = ?";
-        ResultSet rsUser = DBManager.dbExecuteQuery(selectStmt, username);
+        String query = "SELECT * FROM users WHERE username = ?";
+        ResultSet rs = DBManager.dbExecuteQuery(query, username);
 
-        if (rsUser.next()) {
-            return getUserFromRs(rsUser);
+        if (rs.next()) {
+            User user = getUserFromRs(rs);
+            rs.close();
+            return user;
         }
+        rs.close();
         return null;
     }
 
     public static ObservableList<User> getUsers() throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * FROM users";
-        ResultSet rsUsers = DBManager.dbExecuteQuery(selectStmt);
+        String query = "SELECT * FROM users";
+        ResultSet rs = DBManager.dbExecuteQuery(query);
 
-        return getUsersFromRS(rsUsers);
+        ObservableList<User> users = getUsersFromRS(rs);
+        rs.close();
+        return users;
     }
 
     public static User login(String username, String password) throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * FROM users WHERE username = ? AND password = ?";
-        ResultSet rsUser = DBManager.dbExecuteQuery(selectStmt, username, password);
+        String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+        ResultSet rs = DBManager.dbExecuteQuery(query, username, password);
 
-        if (rsUser.next()) {
-            return getUserFromRs(rsUser);
+        if (rs.next()) {
+            User user = getUserFromRs(rs);
+            rs.close();
+            return user;
         }
+        rs.close();
         return null;
 
     }
@@ -46,10 +54,10 @@ public class UserDAO {
     }
 
     public static ObservableList<User> getUsersFromRS(ResultSet rs) throws SQLException {
-        ObservableList<User> userList = FXCollections.observableArrayList();
+        ObservableList<User> users = FXCollections.observableArrayList();
         while (rs.next()) {
-            userList.add(getUserFromRs(rs));
+            users.add(getUserFromRs(rs));
         }
-        return userList;
+        return users;
     }
 }
