@@ -26,7 +26,7 @@ import java.util.*;
 
 public class CalendarController implements Initializable {
     @FXML
-    private TableView calendarTV;
+    private TableView<ObservableList<ColoredItem>> calendarTV;
     @FXML
     private DatePicker fromDP;
     @FXML
@@ -93,20 +93,21 @@ public class CalendarController implements Initializable {
 
         rooms.forEach(room -> {
             ObservableList<ColoredItem> rowItems = FXCollections.observableArrayList();
-            final int[] columnIdx = {0};
+
+
+            int[] idx = {0};
             calendarTV.getColumns().forEach(column -> {
-                if (columnIdx[0] < 2) {
-                    if (columnIdx[0] == 0) {
-                        //                        rowItems.add(new ColoredItem(String.valueOf(room.id()),Color.WHITE));
+
+                if (idx[0] < 2) {
+                    if (idx[0] == 0) {
                         rowItems.add(new ColoredItem(String.valueOf(room.id()), Color.WHITE));
                     } else {
                         rowItems.add(new ColoredItem(room.category(), Color.WHITE));
                     }
-                    columnIdx[0]++;
+                    idx[0]++;
                 } else {
                     if (roomBookDates.containsKey(room.id())) {
-                        if (roomBookDates.get(room.id())
-                                .contains(LocalDate.parse(((TableColumn<ObservableList<ColoredItem>, ColoredItem>) column).getText()))) {
+                        if (roomBookDates.get(room.id()).contains(LocalDate.parse(column.getText()))) {
                             rowItems.add(new ColoredItem("", Color.RED));
                         } else {
                             rowItems.add(new ColoredItem("", Color.GREEN));
