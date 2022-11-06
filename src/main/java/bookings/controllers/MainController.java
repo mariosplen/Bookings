@@ -43,25 +43,25 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    public void onHomeClicked() throws IOException {
+    private void onHomeClicked() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.HOME));
         mainPane.setCenter(loader.load());
     }
 
     @FXML
-    public void onRoomsClicked() throws IOException {
+    private void onRoomsClicked() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.ROOMS));
         mainPane.setCenter(loader.load());
     }
 
     @FXML
-    public void onBooksClicked() throws IOException {
+    private void onBooksClicked() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.HOME));
         mainPane.setCenter(loader.load());
     }
 
     @FXML
-    public void onCalendarClicked() throws IOException {
+    private void onCalendarClicked() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.CALENDAR));
         mainPane.setCenter(loader.load());
     }

@@ -17,8 +17,10 @@ import java.util.ResourceBundle;
 
 public class RoomsController implements Initializable {
 
-    public TableColumn<Room, Boolean> roomsTVIsClean;
-    public TableColumn<Room, Boolean> roomsTVIsAvailable;
+    @FXML
+    private TableColumn<Room, Boolean> roomsTVIsClean;
+    @FXML
+    private TableColumn<Room, Boolean> roomsTVIsAvailable;
     @FXML
     private TableView<Room> roomsTV;
     @FXML
@@ -26,7 +28,7 @@ public class RoomsController implements Initializable {
     @FXML
     private TableColumn<Room, String> roomsTVCategory;
 
-    public void tableViewValues() throws SQLException, ClassNotFoundException {
+    private void tableViewValues() throws SQLException, ClassNotFoundException {
         ObservableList<Room> roomObservableList = RoomDAO.getRooms();
         roomsTVId.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().id()));
         roomsTVCategory.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().category()));

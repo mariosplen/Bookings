@@ -25,9 +25,12 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class CalendarController implements Initializable {
-    public TableView calendarTV;
-    public DatePicker fromDP;
-    public DatePicker toDP;
+    @FXML
+    private TableView calendarTV;
+    @FXML
+    private DatePicker fromDP;
+    @FXML
+    private DatePicker toDP;
 
 
     @Override
@@ -38,7 +41,7 @@ public class CalendarController implements Initializable {
     }
 
     @FXML
-    public void onSearchClicked() throws SQLException, ClassNotFoundException {
+    private void onSearchClicked() throws SQLException, ClassNotFoundException {
         calendarTV.getItems().clear();
         calendarTV.getColumns().clear();
 
@@ -53,9 +56,7 @@ public class CalendarController implements Initializable {
         List<LocalDate> dates = new ArrayList<>(fromDate.datesUntil(toDate).toList());
         dates.add(toDate);
 
-        dates.forEach(date -> {
-            columns.add(date.toString());
-        });
+        dates.forEach(date -> columns.add(date.toString()));
 
 
         for (int i = 0; i < columns.size(); i++) {
@@ -77,11 +78,11 @@ public class CalendarController implements Initializable {
                         setText(null);
                     } else {
                         // bind background and text to the item properties
-                        textProperty().bind(item.valueProperty());
+                        textProperty().bind(item.value());
                         backgroundProperty().bind(Bindings.createObjectBinding(() -> new Background(new BackgroundFill(
-                                item.getBackground(),
+                                item.background().getValue(),
                                 CornerRadii.EMPTY,
-                                Insets.EMPTY)), item.backgroundProperty()));
+                                Insets.EMPTY)), item.background()));
                     }
                 }
 
@@ -96,9 +97,10 @@ public class CalendarController implements Initializable {
             calendarTV.getColumns().forEach(column -> {
                 if (columnIdx[0] < 2) {
                     if (columnIdx[0] == 0) {
-                        rowItems.add(new ColoredItem(String.valueOf(room.id())));
+                        //                        rowItems.add(new ColoredItem(String.valueOf(room.id()),Color.WHITE));
+                        rowItems.add(new ColoredItem(String.valueOf(room.id()), Color.WHITE));
                     } else {
-                        rowItems.add(new ColoredItem(room.category()));
+                        rowItems.add(new ColoredItem(room.category(), Color.WHITE));
                     }
                     columnIdx[0]++;
                 } else {

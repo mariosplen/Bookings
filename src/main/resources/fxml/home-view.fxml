@@ -5,6 +5,7 @@
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea"
             fx:controller="bookings.controllers.HomeController">
     <center>
-        <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER"/>
+        <Button mnemonicParsing="false" onAction="#onNewReservationClicked" text="New Reservation"
+                BorderPane.alignment="CENTER"/>
     </center>
 </BorderPane>

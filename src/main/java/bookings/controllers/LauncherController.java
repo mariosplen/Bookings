@@ -19,8 +19,6 @@ public class LauncherController implements Initializable {
     @FXML
     private ProgressBar progressBar;
 
-    private Stage stage;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

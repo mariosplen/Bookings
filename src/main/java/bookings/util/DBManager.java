@@ -14,7 +14,7 @@ public class DBManager {
         conn = DriverManager.getConnection(connStr);
     }
 
-    public static void dbDisconnect() throws SQLException {
+    private static void dbDisconnect() throws SQLException {
         if (conn != null && !conn.isClosed()) {
             conn.close();
         }

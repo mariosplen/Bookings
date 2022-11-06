@@ -7,6 +7,7 @@ public class Views {
     public static String HOME = "/fxml/home-view.fxml";
     public static String CALENDAR = "/fxml/calendar-view.fxml";
     public static String ROOMS = "/fxml/rooms-view.fxml";
+    public static String FORM = "/fxml/form-view.fxml";
 }
 
 

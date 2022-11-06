@@ -17,16 +17,16 @@ import java.sql.SQLException;
 public class LoginController {
 
     @FXML
-    public Label msg;
+    private Label msg;
     @FXML
-    public Hyperlink registerHL;
+    private Hyperlink registerHL;
     @FXML
     private TextField usernameTF;
     @FXML
     private TextField passwordTF;
 
     @FXML
-    public void onLoginBtnClicked() throws IOException, SQLException, ClassNotFoundException {
+    private void onLoginBtnClicked() throws IOException, SQLException, ClassNotFoundException {
 
         User user = UserDAO.login(usernameTF.getText(), passwordTF.getText());
 
