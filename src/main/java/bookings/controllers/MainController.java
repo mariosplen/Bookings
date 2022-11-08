@@ -56,7 +56,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void onBooksClicked() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.HOME));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.BOOKS));
         mainPane.setCenter(loader.load());
     }
 

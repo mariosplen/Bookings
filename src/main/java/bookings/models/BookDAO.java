@@ -72,4 +72,8 @@ public class BookDAO {
         rs.close();
         return roomBookDates;
     }
+    public static void deleteBook(int id) throws SQLException, ClassNotFoundException {
+        String query = "DELETE FROM books WHERE id = ?";
+        DBManager.dbExecuteUpdate(query, id);
+    }
 }

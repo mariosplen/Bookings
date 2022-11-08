@@ -21,29 +21,47 @@ public class DBManager {
     }
 
     public static ResultSet dbExecuteQuery(
-            String queryStmt, Object... varArgs
+            String query, Object... varArgs
     ) throws SQLException, ClassNotFoundException {
         dbConnect();
-        PreparedStatement stmt = conn.prepareStatement(queryStmt);
+        PreparedStatement ps = conn.prepareStatement(query);
 
         // Sets the value of every designated parameter
         for (int i = 0; i < varArgs.length; i++) {
-            stmt.setObject(i + 1, varArgs[i]);
+            ps.setObject(i + 1, varArgs[i]);
         }
 
-        ResultSet resultSet = stmt.executeQuery();
+        ResultSet rs = ps.executeQuery();
 
         CachedRowSet crs = RowSetProvider.newFactory().createCachedRowSet();
-        crs.populate(resultSet);
+        crs.populate(rs);
 
-        if (resultSet != null) {
-            resultSet.close();
+        if (rs != null) {
+            rs.close();
         }
 
-        stmt.close();
+        ps.close();
         dbDisconnect();
         return crs;
     }
 
-}
 
+
+    public static void dbExecuteUpdate(
+            String query, Object... varArgs
+    ) throws SQLException, ClassNotFoundException {
+        dbConnect();
+        PreparedStatement ps = conn.prepareStatement(query);
+
+        // Sets the value of every designated parameter
+        for (int i = 0; i < varArgs.length; i++) {
+            ps.setObject(i + 1, varArgs[i]);
+        }
+
+        ps.executeUpdate();
+
+        ps.close();
+        dbDisconnect();
+    }
+
+}
