@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            fx:controller="bookings.controllers.HomeController">
+            fx:controller="bookings.controllers.dashboard.DashboardController">
     <center>
         <Button mnemonicParsing="false" onAction="#onNewReservationClicked" text="New Reservation"
                 BorderPane.alignment="CENTER"/>

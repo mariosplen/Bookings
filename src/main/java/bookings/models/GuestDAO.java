@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class GuestDAO {
 
@@ -36,5 +37,11 @@ public class GuestDAO {
         return guests;
     }
 
+
+    public static void addGuest(String name, String phone, String email, Boolean isGroup) throws SQLException, ClassNotFoundException {
+        String query = "INSERT INTO guests(name, phone, email, \"group\") VALUES(?,?,?,?)";
+        DBManager.dbExecuteUpdate(query, name, phone, email, isGroup);
+
+    }
 
 }

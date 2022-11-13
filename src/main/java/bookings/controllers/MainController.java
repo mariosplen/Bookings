@@ -3,6 +3,7 @@ package bookings.controllers;
 import bookings.models.User;
 import bookings.util.Views;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,6 +20,7 @@ public class MainController implements Initializable {
     @FXML
     private BorderPane mainPane;
 
+    private FXMLLoader loader;
 
     public void setUser(User user) {
         this.user = user;
@@ -28,13 +30,11 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.HOME));
         try {
-            mainPane.setCenter(loader.load());
+            onDashboardClicked();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
 
         // Some delay for user to be received
         Platform.runLater(() -> {
@@ -43,26 +43,36 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void onHomeClicked() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.HOME));
+    private void onDashboardClicked() throws IOException {
+        loader = new FXMLLoader(getClass().getResource(Views.HOME));
         mainPane.setCenter(loader.load());
     }
 
     @FXML
     private void onRoomsClicked() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.ROOMS));
+        loader = new FXMLLoader(getClass().getResource(Views.ROOMS));
         mainPane.setCenter(loader.load());
     }
 
     @FXML
     private void onBooksClicked() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.BOOKS));
+        loader = new FXMLLoader(getClass().getResource(Views.BOOKS));
         mainPane.setCenter(loader.load());
     }
 
     @FXML
     private void onCalendarClicked() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.CALENDAR));
+        loader = new FXMLLoader(getClass().getResource(Views.CALENDAR));
+        mainPane.setCenter(loader.load());
+    }
+
+    public void onGuestsClicked() throws IOException {
+        loader = new FXMLLoader(getClass().getResource(Views.GUESTS));
+        mainPane.setCenter(loader.load());
+    }
+
+    public void onSysManClk() throws IOException {
+        loader = new FXMLLoader(getClass().getResource(Views.GUESTS));
         mainPane.setCenter(loader.load());
     }
 }

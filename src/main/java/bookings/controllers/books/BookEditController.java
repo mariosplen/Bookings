@@ -1,4 +1,4 @@
-package bookings.controllers;
+package bookings.controllers.books;
 
 import bookings.models.BookDAO;
 import bookings.util.Views;

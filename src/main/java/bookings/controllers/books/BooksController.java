@@ -1,25 +1,23 @@
-package bookings.controllers;
+package bookings.controllers.books;
 
 import bookings.models.Book;
 import bookings.models.BookDAO;
 import bookings.util.Views;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class BooksController implements Initializable {
-    public VBox booksColumn;
+    @FXML
+    private VBox booksColumn;
     ObservableList<Book> books;
-    ArrayList<Node> bookRows;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -28,7 +26,6 @@ public class BooksController implements Initializable {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        bookRows = new ArrayList<>();
 
         books.forEach(book -> {
             // Initialize controller
@@ -36,7 +33,7 @@ public class BooksController implements Initializable {
 
 
             try {
-                bookRows.add(fxmlLoader.load());
+                booksColumn.getChildren().add(fxmlLoader.load());
                 // Pass parameters to controller
                 BookItemController bookItemController = fxmlLoader.getController();
                 bookItemController.setBookId(String.valueOf(book.id()));
@@ -45,10 +42,6 @@ public class BooksController implements Initializable {
             }
         });
 
-        bookRows.forEach(row -> {
-            booksColumn.getChildren().add(row);
-
-        });
 
     }
 }

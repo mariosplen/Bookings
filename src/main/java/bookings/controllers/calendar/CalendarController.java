@@ -1,4 +1,4 @@
-package bookings.controllers;
+package bookings.controllers.calendar;
 
 import bookings.models.BookDAO;
 import bookings.models.Room;
@@ -7,6 +7,7 @@ import bookings.util.ColoredItem;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -22,6 +23,7 @@ import javafx.scene.paint.Color;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.util.*;
 
 public class CalendarController implements Initializable {
@@ -35,8 +37,16 @@ public class CalendarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        fromDP.setValue(LocalDate.parse("2022-10-30"));
-        toDP.setValue(LocalDate.parse("2022-11-11"));
+        LocalDate startOfMonth = YearMonth.now().atDay(1);
+        LocalDate endOfMonth = YearMonth.now().atEndOfMonth();
+
+        fromDP.setValue(startOfMonth);
+        toDP.setValue(endOfMonth);
+        try {
+            onSearchClicked();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -120,5 +130,30 @@ public class CalendarController implements Initializable {
             calendarTV.getItems().add(rowItems);
         });
 
+    }
+
+    public void onNextMonthClk(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        LocalDate initial = fromDP.getValue().plusMonths(1);
+
+        LocalDate nextStartOfMonth = initial.withDayOfMonth(1);
+        LocalDate nextEndOfMonth =
+                initial.withDayOfMonth(initial.getMonth().length(initial.isLeapYear()));
+
+        fromDP.setValue(nextStartOfMonth);
+        toDP.setValue(nextEndOfMonth);
+        onSearchClicked();
+    }
+
+    public void onPrevMonthClk(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+
+        LocalDate initial = fromDP.getValue().minusMonths(1);
+
+        LocalDate prevStartOfMonth = initial.withDayOfMonth(1);
+        LocalDate prevEndOfMonth =
+                initial.withDayOfMonth(initial.getMonth().length(initial.isLeapYear()));
+
+        fromDP.setValue(prevStartOfMonth);
+        toDP.setValue(prevEndOfMonth);
+        onSearchClicked();
     }
 }

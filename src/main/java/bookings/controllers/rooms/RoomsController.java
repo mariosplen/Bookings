@@ -1,4 +1,4 @@
-package bookings.controllers;
+package bookings.controllers.rooms;
 
 import bookings.models.Room;
 import bookings.models.RoomDAO;
