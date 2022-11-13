@@ -1,4 +1,4 @@
-package bookings.controllers;
+package bookings.controllers.login;
 
 import bookings.util.Views;
 import javafx.animation.PauseTransition;

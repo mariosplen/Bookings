@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookings.controllers.dashboard.FormController">
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <TextField fx:id="roomIdTF" promptText="roomID" />
+            <TextField fx:id="guestIdTF" promptText="guestID" />
+         <DatePicker fx:id="checkInDP" onAction="#checkInUpdated" promptText="checkin" />
+         <DatePicker fx:id="checkOutDP" onAction="#calcFinalPrice" promptText="checkout" />
+            <ChoiceBox fx:id="statusCB" prefWidth="150.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Awaiting Pre-Payment" />
+                        <String fx:value="Booked" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+
+         <CheckBox fx:id="prepaymentCB" mnemonicParsing="false" onAction="#calcFinalPrice" text="prepayment offer" />
+         <CheckBox fx:id="phoneChargeCB" mnemonicParsing="false" onAction="#calcFinalPrice" text="booking from phone(extra fee)" />
+         <CheckBox fx:id="percentageCB" mnemonicParsing="false" onAction="#calcFinalPrice" text="plirotita kato tou 50" />
+         <Label fx:id="percentage" />
+         <Label text="\%plirotita" />
+         <CheckBox fx:id="summerCB" mnemonicParsing="false" onAction="#calcFinalPrice" text="summer Price" />
+         <CheckBox fx:id="christmasCB" mnemonicParsing="false" onAction="#calcFinalPrice" text="Christmas Price" />
+         <CheckBox fx:id="easterCB" mnemonicParsing="false" onAction="#calcFinalPrice" text="Easter Price" />
+         <CheckBox fx:id="eventCB" mnemonicParsing="false" onAction="#calcFinalPrice" text="City Event Price" />
+
+            <ChoiceBox fx:id="methodCB" prefWidth="150.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Cash" />
+                        <String fx:value="Card" />
+                        <String fx:value="Bank" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+         <TextField fx:id="cardTF" promptText="card Number" />
+         <TextField fx:id="vccTF" promptText="card VCC" />
+         <TextField fx:id="priceTF" promptText="price" />
+         <Button mnemonicParsing="false" onAction="#onSubmitClicked" text="Submit" />
+         <Label fx:id="totalPrice" text="AAAAAAA" />
+        </VBox>
+    </center>
+</BorderPane>

@@ -6,12 +6,13 @@
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" prefHeight="768" prefWidth="1366"
             xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="bookings.controllers.MainController">
     <left>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="200.0" BorderPane.alignment="CENTER">
-            <Button mnemonicParsing="false" onAction="#onHomeClicked" text="Home"/>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="80.0" BorderPane.alignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#onDashboardClicked" text="Dashboard"/>
             <Button mnemonicParsing="false" onAction="#onRoomsClicked" text="Rooms"/>
             <Button mnemonicParsing="false" onAction="#onBooksClicked" text="Books"/>
-            <Button layoutX="28.0" layoutY="612.0" mnemonicParsing="false" onAction="#onCalendarClicked"
-                    text="Calendar"/>
+            <Button mnemonicParsing="false" onAction="#onCalendarClicked" text="Calendar"/>
+            <Button mnemonicParsing="false" onAction="#onGuestsClicked" text="Guests"/>
+            <Button mnemonicParsing="false" onAction="#onSysManClk" text="System Management"/>
         </VBox>
     </left>
 </BorderPane>

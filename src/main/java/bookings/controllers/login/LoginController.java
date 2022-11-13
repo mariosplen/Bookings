@@ -1,5 +1,6 @@
-package bookings.controllers;
+package bookings.controllers.login;
 
+import bookings.controllers.MainController;
 import bookings.models.User;
 import bookings.models.UserDAO;
 import bookings.util.Views;

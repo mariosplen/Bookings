@@ -72,4 +72,62 @@ public class BookDAO {
         rs.close();
         return roomBookDates;
     }
+
+    public static void deleteBook(int id) throws SQLException, ClassNotFoundException {
+        String query = "DELETE FROM books WHERE id = ?";
+        DBManager.dbExecuteUpdate(query, id);
+    }
+
+    public static void addBook(
+            int roomId,
+            int guestId,
+            LocalDate checkIn,
+            LocalDate checkOut,
+            String status,
+            LocalDate date,
+            Boolean isUsingPrepaymentOffer,
+            Boolean isChargedPhonePrepayment,
+            String paymentMethod,
+            int totalPrice,
+            String cardNumber,
+            String cardVCC
+    ) throws SQLException, ClassNotFoundException {
+        String query = "INSERT INTO books(room_id, guest_id, check_in, check_out, status, date, " + "prepayment_offer, prepayment_phone_charge, payment_method, card_number, card_vcc, total_price) " + "Values(?,?,?,?,?,?,?,?,?,?,?,?)";
+        DBManager.dbExecuteUpdate(query,
+                                  roomId,
+                                  guestId,
+                                  checkIn,
+                                  checkOut,
+                                  status,
+                                  date,
+                                  isUsingPrepaymentOffer,
+                                  isChargedPhonePrepayment,
+                                  paymentMethod,
+                                  cardNumber,
+                                  cardVCC,
+                                  totalPrice);
+
+    }
+
+
+    public static int getOccupancyPercentage(LocalDate checkIn) throws SQLException, ClassNotFoundException {
+        int percentage = 0;
+        String query = """
+                SELECT CAST((SELECT Count(check_in)
+                             FROM   books
+                             WHERE  check_in = ?) / (SELECT Cast(Count(id) AS REAL)
+                                                                FROM   rooms) * 100 AS INTEGER)
+                       AS
+                       percentage
+                """;
+        ResultSet rs = DBManager.dbExecuteQuery(query, checkIn);
+        if(rs.next()){
+            percentage = rs.getInt(1);
+        }
+        rs.close();
+
+        return percentage;
+    }
+
 }
+

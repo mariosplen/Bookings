@@ -1,4 +1,4 @@
-package bookings.controllers;
+package bookings.controllers.dashboard;
 
 import bookings.util.Views;
 import javafx.fxml.FXML;
@@ -8,14 +8,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeController {
+public class DashboardController {
 
 
     @FXML
     private void onNewReservationClicked() throws IOException {
 
         // Initialize controller
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.FORM));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.BOOK_FORM));
         Scene scene = new Scene(loader.load());
 
         // Set scene to new window

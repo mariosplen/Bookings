@@ -5,8 +5,8 @@
 <AnchorPane
         xmlns:fx="http://javafx.com/fxml/1"
         xmlns="http://javafx.com/javafx/17.0.2-ea"
-        fx:controller="bookings.controllers.LauncherController"
-        stylesheets="@../css/launcher-view.css"
+        fx:controller="bookings.controllers.login.LauncherController"
+        stylesheets="@../../css/launcher-view.css"
 
         prefHeight="400.0"
         prefWidth="600.0">
