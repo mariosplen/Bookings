@@ -9,7 +9,7 @@
         <columns>
             <TableColumn fx:id="roomsTVId" prefWidth="75.0" text="roomid"/>
             <TableColumn fx:id="roomsTVCategory" prefWidth="75.0" text="category"/>
-            <TableColumn fx:id="roomsTVIsClean" prefWidth="75.0" text="isclean"/>
+            <TableColumn fx:id="roomsTVStatus" prefWidth="75.0" text="status"/>
             <TableColumn fx:id="roomsTVIsAvailable" prefWidth="75.0" text="isavailable"/>
         </columns>
     </TableView>

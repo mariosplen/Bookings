@@ -3,7 +3,7 @@ package bookings.models;
 public record Room(
         int id,
         String category,
-        Boolean isClean,
+        String status,
         Boolean isAvailable
 ) {
 }

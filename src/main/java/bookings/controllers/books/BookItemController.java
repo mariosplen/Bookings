@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class BookItemController {
 
-
     public TextField bookId;
 
     public void setBookId(String bookId){
@@ -22,14 +21,13 @@ public class BookItemController {
     public void onEditClicked(ActionEvent actionEvent) throws IOException {
 
 
+        // Finds current bookId by going backwards to the node tree
         int bookId = Integer.parseInt(
                 ((TextField)
                         ((Button)actionEvent.getSource())
                                 .getParent().getChildrenUnmodifiable().get(0))
                         .getText()
         );
-
-
 
         // Initialize controller
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.BOOK_EDIT));

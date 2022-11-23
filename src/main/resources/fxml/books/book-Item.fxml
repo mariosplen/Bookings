@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="0.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      fx:controller="bookings.controllers.books.BookItemController">
 
-<HBox prefHeight="0.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookings.controllers.books.BookItemController">
-   <children>
-      <TextField fx:id="bookId" prefHeight="35.0" prefWidth="89.0" />
-      <Button mnemonicParsing="false" onAction="#onEditClicked" text="edit" />
-   </children>
+    <children>
+        <TextField fx:id="bookId" prefHeight="35.0" prefWidth="89.0"/>
+        <Button mnemonicParsing="false" onAction="#onEditClicked" text="edit"/>
+    </children>
+
+
 </HBox>

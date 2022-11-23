@@ -15,7 +15,7 @@ import java.util.Map;
 public class BookDAO {
 
     public static ObservableList<Book> getBooks() throws SQLException, ClassNotFoundException {
-        String query = "SELECT * FROM books";
+        String query = "SELECT * FROM books;";
         ResultSet rs = DBManager.dbExecuteQuery(query);
         ObservableList<Book> books = getBooksFromRS(rs);
         rs.close();
@@ -26,18 +26,26 @@ public class BookDAO {
 
     public static Book getBookFromRs(ResultSet rs) throws SQLException {
         return new Book(rs.getInt("id"),
-                        rs.getInt("room_id"),
-                        rs.getInt("guest_id"),
-                        LocalDate.parse(rs.getString("check_in")),
-                        LocalDate.parse(rs.getString("check_out")),
-                        rs.getString("status"),
-                        LocalDate.parse(rs.getString("date")),
-                        rs.getBoolean("prepayment_offer"),
-                        rs.getBoolean("prepayment_phone_charge"),
-                        rs.getString("payment_method"),
-                        rs.getString("card_number"),
-                        rs.getString("card_vcc"),
-                        rs.getInt("total_price"));
+                rs.getInt("room_id"),
+                rs.getInt("guest_id"),
+                LocalDate.parse(rs.getString("check_in")),
+                LocalDate.parse(rs.getString("check_out")),
+                rs.getString("status"),
+                LocalDate.parse(rs.getString("date")),
+                rs.getBoolean("prepayment_offer"),
+                rs.getBoolean("from_phone_prepayment"),
+                rs.getString("payment_method"),
+                rs.getBoolean("summer_charge"),
+                rs.getBoolean("christmas_charge"),
+                rs.getBoolean("easter_charge"),
+                rs.getBoolean("event_charge"),
+                rs.getBoolean("low_occupancy_offer"),
+                rs.getInt("door_price"),
+                rs.getInt("total_price"),
+                rs.getString("card_number"),
+                rs.getString("card_vcc")
+        );
+
     }
 
     public static ObservableList<Book> getBooksFromRS(ResultSet rs) throws SQLException {
@@ -49,7 +57,7 @@ public class BookDAO {
     }
 
     public static Map<Integer, List<LocalDate>> getRoomBookDates() throws SQLException, ClassNotFoundException {
-        String query = "SELECT room_id, check_in, check_out FROM books ";
+        String query = "SELECT room_id, check_in, check_out FROM books;";
 
         ResultSet rs = DBManager.dbExecuteQuery(query);
 
@@ -74,7 +82,10 @@ public class BookDAO {
     }
 
     public static void deleteBook(int id) throws SQLException, ClassNotFoundException {
-        String query = "DELETE FROM books WHERE id = ?";
+        String query = """
+                DELETE FROM books
+                WHERE  id = ?;
+                """;
         DBManager.dbExecuteUpdate(query, id);
     }
 
@@ -86,26 +97,42 @@ public class BookDAO {
             String status,
             LocalDate date,
             Boolean isUsingPrepaymentOffer,
-            Boolean isChargedPhonePrepayment,
+            Boolean isChargedFromPhonePrepayment,
             String paymentMethod,
+            Boolean isSummerCharged,
+            Boolean isChristmasCharged,
+            Boolean isEasterCharged,
+            Boolean isEventCharged,
+            Boolean isUsingLowOccupancyOffer,
+            int doorPrice,
             int totalPrice,
             String cardNumber,
             String cardVCC
     ) throws SQLException, ClassNotFoundException {
-        String query = "INSERT INTO books(room_id, guest_id, check_in, check_out, status, date, " + "prepayment_offer, prepayment_phone_charge, payment_method, card_number, card_vcc, total_price) " + "Values(?,?,?,?,?,?,?,?,?,?,?,?)";
+        String query = """
+                INSERT INTO books(room_id, guest_id, check_in, check_out, status, date, prepayment_offer, from_phone_prepayment, payment_method, summer_charge, christmas_charge, easter_charge, event_charge, low_occupancy_offer, door_price, total_price, card_number, card_vcc)
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """;
         DBManager.dbExecuteUpdate(query,
-                                  roomId,
-                                  guestId,
-                                  checkIn,
-                                  checkOut,
-                                  status,
-                                  date,
-                                  isUsingPrepaymentOffer,
-                                  isChargedPhonePrepayment,
-                                  paymentMethod,
-                                  cardNumber,
-                                  cardVCC,
-                                  totalPrice);
+                roomId,
+                guestId,
+                checkIn,
+                checkOut,
+                status,
+                date,
+                isUsingPrepaymentOffer,
+                isChargedFromPhonePrepayment,
+                paymentMethod,
+                isSummerCharged,
+                isChristmasCharged,
+                isEasterCharged,
+                isEventCharged,
+                isUsingLowOccupancyOffer,
+                doorPrice,
+                totalPrice,
+                cardNumber,
+                cardVCC
+        );
 
     }
 
@@ -118,7 +145,7 @@ public class BookDAO {
                              WHERE  check_in = ?) / (SELECT Cast(Count(id) AS REAL)
                                                                 FROM   rooms) * 100 AS INTEGER)
                        AS
-                       percentage
+                       percentage;
                 """;
         ResultSet rs = DBManager.dbExecuteQuery(query, checkIn);
         if(rs.next()){

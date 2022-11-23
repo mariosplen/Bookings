@@ -9,15 +9,12 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import static java.time.temporal.ChronoUnit.DAYS;
-
 public class FormController {
 
 
     @FXML
     private Label percentage;
-    @FXML
-    private Label totalPrice;
+    int totalPrice;
     @FXML
     private CheckBox summerCB;
     @FXML
@@ -50,6 +47,8 @@ public class FormController {
     private TextField roomIdTF;
     @FXML
     private DatePicker checkInDP;
+    @FXML
+    private Label totalPriceF;
 
     public void onSubmitClicked(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         int roomId = Integer.parseInt(roomIdTF.getText());
@@ -61,22 +60,29 @@ public class FormController {
         Boolean phoneCharge = phoneChargeCB.isSelected();
         String method = (String) statusCB.getValue();
         String cardNumber = null;
-        if(!cardTF.getText().isBlank()){
+        if (!cardTF.getText().isBlank()) {
             cardNumber = cardTF.getText();
         }
         String cardVcc = null;
-        if(!vccTF.getText().isBlank()){
+        if (!vccTF.getText().isBlank()) {
             cardVcc = vccTF.getText();
         }
 
 
+        Boolean isSummerCharged = summerCB.isSelected();
+        Boolean isChristmasCharged = christmasCB.isSelected();
+        Boolean isEasterCharged = easterCB.isSelected();
+        Boolean isEventCharged = eventCB.isSelected();
+        Boolean isUsingLowOccupancyOffer = percentageCB.isSelected();
 
 
-        int totalPrice = Integer.parseInt(priceTF.getText());
+        totalPrice = Integer.parseInt(priceTF.getText());
 
 
-        BookDAO.addBook(roomId,guestId,checkIn,checkOut,status,LocalDate.now(),prepayment,phoneCharge,method,
-                        totalPrice, cardNumber,cardVcc);
+        BookDAO.addBook(roomId, guestId, checkIn, checkOut, status, LocalDate.now(), prepayment, phoneCharge, method,
+                isSummerCharged, isChristmasCharged, isEasterCharged, isEventCharged, isUsingLowOccupancyOffer,
+                Integer.parseInt(priceTF.getText())
+                , totalPrice, cardNumber, cardVcc);
 
 
     }
@@ -88,9 +94,24 @@ public class FormController {
     }
 
     public void calcFinalPrice(){
-        if(checkInDP!=null && checkOutDP!=null && !priceTF.getText().isBlank()){
+        if (checkInDP != null && checkOutDP != null && !priceTF.getText().isBlank()) {
             long daysBetween = checkInDP.getValue().until(checkOutDP.getValue(), ChronoUnit.DAYS);
-            priceTF.setText(String.valueOf(daysBetween*Long.parseLong(priceTF.getText())));
+            totalPrice = (int) (daysBetween * Long.parseLong(priceTF.getText()));
+
+
+            if (christmasCB.isSelected() || eventCB.isSelected() || easterCB.isSelected() || summerCB.isSelected()) {
+                totalPrice += 15;
+            }
+
+
+            if (percentageCB.isSelected()) {
+                totalPrice /= 2;
+
+            }
+
+            totalPriceF.setText(String.valueOf(totalPrice));
+
+
         }
     }
 }

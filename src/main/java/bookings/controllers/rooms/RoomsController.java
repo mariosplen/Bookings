@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class RoomsController implements Initializable {
 
     @FXML
-    private TableColumn<Room, Boolean> roomsTVIsClean;
+    private TableColumn<Room, String> roomsTVStatus;
     @FXML
     private TableColumn<Room, Boolean> roomsTVIsAvailable;
     @FXML
@@ -32,7 +32,7 @@ public class RoomsController implements Initializable {
         ObservableList<Room> roomObservableList = RoomDAO.getRooms();
         roomsTVId.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().id()));
         roomsTVCategory.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().category()));
-        roomsTVIsClean.setCellValueFactory(p -> new SimpleBooleanProperty(p.getValue().isClean()));
+        roomsTVStatus.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().status()));
         roomsTVIsAvailable.setCellValueFactory(p -> new SimpleBooleanProperty(p.getValue().isAvailable()));
         roomsTV.setItems(roomObservableList);
     }

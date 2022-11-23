@@ -4,6 +4,9 @@ public record User(
         int id,
         String username,
         String password,
-        int privLevel
+        Boolean canDoBasicActions,
+        Boolean canViewStatistics,
+        Boolean canViewRevenue,
+        Boolean canManageUsers
 ) {
 }

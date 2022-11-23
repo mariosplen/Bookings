@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookings.controllers.books.BooksController">
-   <center>
-      <VBox fx:id="booksColumn" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-   </center>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="bookings.controllers.books.BooksController">
+    <center>
+        <VBox fx:id="booksColumn" alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+              BorderPane.alignment="CENTER"/>
+    </center>
+    <bottom>
+        <TableView fx:id="tempBooksTV" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="id"/>
+                <TableColumn fx:id="room_id" prefWidth="75.0" text="room_id"/>
+                <TableColumn fx:id="guest_id" prefWidth="75.0" text="guest_id"/>
+                <TableColumn fx:id="check_in" prefWidth="75.0" text="check_in"/>
+                <TableColumn fx:id="check_out" prefWidth="75.0" text="check_out"/>
+                <TableColumn fx:id="status" prefWidth="75.0" text="status"/>
+                <TableColumn fx:id="date" prefWidth="75.0" text="date"/>
+                <TableColumn fx:id="payment_method" prefWidth="75.0" text="payment_method"/>
+                <TableColumn fx:id="prepayment_offer" prefWidth="75.0" text="prepayment_offer"/>
+                <TableColumn fx:id="low_occupancy_offer" prefWidth="75.0" text="low_occupancy_offer"/>
+                <TableColumn fx:id="from_Phone_prepayment_charge" prefWidth="75.0" text="from_Phone_prepayment_charge"/>
+                <TableColumn fx:id="summer_charge" prefWidth="75.0" text="summer_charge"/>
+                <TableColumn fx:id="christmas_charge" prefWidth="75.0" text="christmas_charge"/>
+                <TableColumn fx:id="easter_charge" prefWidth="75.0" text="easter_charge"/>
+                <TableColumn fx:id="event_charge" prefWidth="75.0" text="event_charge"/>
+                <TableColumn fx:id="door_price" prefWidth="75.0" text="door_price"/>
+                <TableColumn fx:id="total_price" prefWidth="75.0" text="total_price"/>
+                <TableColumn fx:id="card_num" prefWidth="75.0" text="card_num"/>
+                <TableColumn fx:id="card_vcc" prefWidth="75.0" text="card_vcc"/>
+            </columns>
+        </TableView>
+    </bottom>
 </BorderPane>
