@@ -1,0 +1,16 @@
+.menuBtn {
+    -fx-background-color : #5100FC;
+}
+
+.menuBtn:hover {
+    -fx-background-color : #7332FC;
+}
+
+.menuBtn:pressed {
+    -fx-background-color : #5100FC;
+}
+
+
+.menuBtnDisabled {
+    -fx-background-color : #696969;
+}

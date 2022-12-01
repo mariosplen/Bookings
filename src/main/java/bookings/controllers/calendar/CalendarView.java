@@ -26,7 +26,7 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.*;
 
-public class CalendarController implements Initializable {
+public class CalendarView implements Initializable {
     @FXML
     private TableView<ObservableList<ColoredItem>> calendarTV;
     @FXML
@@ -132,7 +132,7 @@ public class CalendarController implements Initializable {
 
     }
 
-    public void onNextMonthClk(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+    public void onNextMonthClk() throws SQLException, ClassNotFoundException {
         LocalDate initial = fromDP.getValue().plusMonths(1);
 
         LocalDate nextStartOfMonth = initial.withDayOfMonth(1);
@@ -144,7 +144,7 @@ public class CalendarController implements Initializable {
         onSearchClicked();
     }
 
-    public void onPrevMonthClk(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+    public void onPrevMonthClk() throws SQLException, ClassNotFoundException {
 
         LocalDate initial = fromDP.getValue().minusMonths(1);
 

@@ -1,0 +1,24 @@
+.signInBtn {
+    -fx-background-color : #5100FC;
+}
+
+.signInBtn:hover {
+    -fx-background-color : #7332FC;
+}
+
+.signInBtn:pressed {
+    -fx-background-color : #5100FC;
+}
+
+
+.credentialsTF {
+    -fx-background-color : #C6B3EF;
+}
+
+.credentialsTF:hover {
+    -fx-background-color : #D1C2F2;
+}
+
+.credentialsTF:focused {
+    -fx-background-color : #D1C2F2;
+}

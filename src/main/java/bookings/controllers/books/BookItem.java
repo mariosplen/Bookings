@@ -10,11 +10,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class BookItemController {
+public class BookItem {
 
     public TextField bookId;
 
-    public void setBookId(String bookId){
+    public void setBookId(String bookId) {
         this.bookId.setText(bookId);
     }
 
@@ -35,8 +35,8 @@ public class BookItemController {
         Scene scene = new Scene(loader.load());
 
         // Pass parameters to controller
-        BookEditController bookEditController = loader.getController();
-        bookEditController.setBookId(bookId);
+        BookEdit bookEdit = loader.getController();
+        bookEdit.setBookId(bookId);
 
         // Set scene to new window
         Stage stage = new Stage();

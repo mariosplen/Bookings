@@ -2,15 +2,30 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="bookings.controllers.rooms.RoomsController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            prefHeight="400.0"
+            prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea"
+            fx:controller="bookings.controllers.rooms.RoomsView">
 
-    <TableView fx:id="roomsTV" layoutX="131.0" layoutY="100.0" prefHeight="200.0" prefWidth="338.0">
+    <TableView fx:id="roomsTV"
+               layoutX="131.0"
+               layoutY="100.0"
+               prefHeight="200.0"
+               prefWidth="338.0">
         <columns>
-            <TableColumn fx:id="roomsTVId" prefWidth="75.0" text="roomid"/>
-            <TableColumn fx:id="roomsTVCategory" prefWidth="75.0" text="category"/>
-            <TableColumn fx:id="roomsTVStatus" prefWidth="75.0" text="status"/>
-            <TableColumn fx:id="roomsTVIsAvailable" prefWidth="75.0" text="isavailable"/>
+            <TableColumn fx:id="roomsTVId"
+                         prefWidth="75.0"
+                         text="roomid"/>
+            <TableColumn fx:id="roomsTVCategory"
+                         prefWidth="75.0"
+                         text="category"/>
+            <TableColumn fx:id="roomsTVStatus"
+                         prefWidth="75.0"
+                         text="status"/>
+            <TableColumn fx:id="roomsTVIsAvailable"
+                         prefWidth="75.0"
+                         text="isavailable"/>
         </columns>
     </TableView>
 </AnchorPane>

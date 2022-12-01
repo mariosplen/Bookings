@@ -1,12 +1,11 @@
 package bookings.application;
 
+import bookings.controllers.loading.LoadingView;
 import bookings.util.Views;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import jfxtras.styles.jmetro.JMetro;
-import jfxtras.styles.jmetro.Style;
 
 import java.io.IOException;
 
@@ -24,13 +23,15 @@ public class Bookings extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Views.LAUNCHER));
         Scene scene = new Scene(fxmlLoader.load());
 
-        // Applying styling for jMetro ProgressBar
-        JMetro jMetro = new JMetro(Style.LIGHT);
-        jMetro.setScene(scene);
+        // Pass stage to controller
+        LoadingView loadingView = fxmlLoader.getController();
+        loadingView.setStage(stage);
 
         // Show controller
         stage.setScene(scene);
         stage.show();
+
+        // Resizable set back to false because of intro video
         stage.setResizable(false);
 
     }

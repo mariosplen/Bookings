@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.Pane?>
+<Pane xmlns:fx="http://javafx.com/fxml/1"
+      prefHeight="768"
+      prefWidth="1366"
+      style="-fx-background-color: #5100FC;"
+      xmlns="http://javafx.com/javafx/17.0.2-ea"
+      fx:controller="bookings.controllers.loading.LoadingView">
+
+</Pane>

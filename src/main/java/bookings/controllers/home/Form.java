@@ -1,4 +1,4 @@
-package bookings.controllers.dashboard;
+package bookings.controllers.home;
 
 import bookings.models.BookDAO;
 import javafx.event.ActionEvent;
@@ -9,34 +9,20 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class FormController {
+public class Form {
 
 
     @FXML
     private Label percentage;
     int totalPrice;
     @FXML
-    private CheckBox summerCB;
+    private CheckBox summerCB, christmasCB, easterCB, percentageCB, eventCB;
     @FXML
-    private CheckBox christmasCB;
-    @FXML
-    private CheckBox easterCB;
-    @FXML
-    private CheckBox percentageCB;
-    @FXML
-    private CheckBox eventCB;
-    @FXML
-    private TextField priceTF;
-    @FXML
-    private TextField vccTF;
-    @FXML
-    private TextField cardTF;
+    private TextField priceTF, vccTF, cardTF;
     @FXML
     private ChoiceBox methodCB;
     @FXML
-    private CheckBox phoneChargeCB;
-    @FXML
-    private CheckBox prepaymentCB;
+    private CheckBox phoneChargeCB, prepaymentCB;
     @FXML
     private ChoiceBox statusCB;
     @FXML

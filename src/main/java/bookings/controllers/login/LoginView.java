@@ -1,6 +1,6 @@
 package bookings.controllers.login;
 
-import bookings.controllers.MainController;
+import bookings.controllers.MainView;
 import bookings.models.User;
 import bookings.models.UserDAO;
 import bookings.util.Views;
@@ -15,8 +15,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class LoginController {
+public class LoginView {
 
+
+    private Stage stage;
     @FXML
     private Label msg;
     @FXML
@@ -25,6 +27,11 @@ public class LoginController {
     private TextField usernameTF;
     @FXML
     private TextField passwordTF;
+
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
     @FXML
     private void onLoginBtnClicked() throws IOException, SQLException, ClassNotFoundException {
@@ -41,16 +48,13 @@ public class LoginController {
         Scene scene = new Scene(loader.load());
 
         // Pass parameters to controller
-        MainController mainController = loader.getController();
-        mainController.setUser(user);
+        MainView mainView = loader.getController();
+        mainView.setUser(user);
+        mainView.setStage(stage);
 
         // Set scene to new window
-        Stage stage = new Stage();
         stage.setScene(scene);
-        stage.show();
-        stage.setResizable(false);
 
-        // Close current window
-        ((Stage) usernameTF.getScene().getWindow()).close();
+
     }
 }

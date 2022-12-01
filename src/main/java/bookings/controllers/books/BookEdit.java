@@ -16,7 +16,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class BookEditController implements Initializable {
+public class BookEdit implements Initializable {
     @FXML
     private Label msg;
     private int bookId;

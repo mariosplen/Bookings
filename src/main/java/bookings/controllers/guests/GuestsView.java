@@ -2,8 +2,6 @@ package bookings.controllers.guests;
 
 import bookings.models.Guest;
 import bookings.models.GuestDAO;
-import bookings.models.Room;
-import bookings.models.RoomDAO;
 import bookings.util.Views;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -23,7 +21,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class GuestsController implements Initializable {
+public class GuestsView implements Initializable {
     @FXML
     private TableView<Guest> guestsTV;
     @FXML
@@ -59,7 +57,7 @@ public class GuestsController implements Initializable {
         }
     }
 
-    public void onNewGuestClicked(ActionEvent actionEvent) throws IOException {
+    public void onNewGuestClicked() throws IOException {
         // Initialize controller
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.GUEST_FORM));
         Scene scene = new Scene(loader.load());

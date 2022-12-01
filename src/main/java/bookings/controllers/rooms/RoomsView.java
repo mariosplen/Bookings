@@ -15,7 +15,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class RoomsController implements Initializable {
+public class RoomsView implements Initializable {
 
     @FXML
     private TableColumn<Room, String> roomsTVStatus;

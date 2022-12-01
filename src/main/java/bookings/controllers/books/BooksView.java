@@ -19,7 +19,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class BooksController implements Initializable {
+public class BooksView implements Initializable {
 
 
     @FXML
@@ -97,8 +97,8 @@ public class BooksController implements Initializable {
             try {
                 booksColumn.getChildren().add(fxmlLoader.load());
                 // Pass parameters to controller
-                BookItemController bookItemController = fxmlLoader.getController();
-                bookItemController.setBookId(String.valueOf(book.id()));
+                BookItem bookItem = fxmlLoader.getController();
+                bookItem.setBookId(String.valueOf(book.id()));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
