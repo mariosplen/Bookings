@@ -51,8 +51,8 @@ public class UserDAO {
                 rs.getString("username"),
                 rs.getString("password"),
                 rs.getBoolean("basic_functions"),
-                rs.getBoolean("view_statistics"),
-                rs.getBoolean("view_revenue"),
+                rs.getBoolean("view_info"),
+                rs.getBoolean("manage_guests"),
                 rs.getBoolean("manage_users")
         );
     }
