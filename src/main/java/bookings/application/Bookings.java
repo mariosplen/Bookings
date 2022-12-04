@@ -20,7 +20,7 @@ public class Bookings extends Application {
     public void start(Stage stage) throws IOException {
 
         // Initialize controller
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Views.LAUNCHER));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Views.LOADING));
         Scene scene = new Scene(fxmlLoader.load());
 
         // Pass stage to controller
