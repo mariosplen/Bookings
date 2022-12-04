@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.Pane?>
-<Pane xmlns:fx="http://javafx.com/fxml/1"
-      prefHeight="768"
-      prefWidth="1366"
-      style="-fx-background-color: #5100FC;"
-      xmlns="http://javafx.com/javafx/17.0.2-ea"
-      fx:controller="bookings.controllers.loading.LoadingView">
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-</Pane>
+<BorderPane prefHeight="768" prefWidth="1366" style="-fx-background-color: #5100FC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookings.controllers.loading.LoadingView">
+    <stylesheets>
+        <URL value="@../../fonts/AtomicAge/atomic_age.css" />
+    </stylesheets>
+<center>
+    <Text fx:id="title" boundsType="VISUAL" fill="WHITE" style="-fx-font-family: 'Atomic Age'; -fx-font-size: 96;" text="HOTELINO" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <effect>
+            <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                <color>
+                    <Color opacity="0.2" />
+                </color>
+            </DropShadow>
+        </effect>
+    </Text>
+</center>
+
+</BorderPane>

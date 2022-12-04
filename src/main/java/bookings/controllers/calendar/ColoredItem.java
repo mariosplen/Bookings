@@ -1,4 +1,4 @@
-package bookings.util;
+package bookings.controllers.calendar;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
