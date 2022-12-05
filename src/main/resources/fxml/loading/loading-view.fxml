@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
@@ -10,16 +12,45 @@
     <stylesheets>
         <URL value="@../../fonts/AtomicAge/atomic_age.css" />
     </stylesheets>
-<center>
-    <Text fx:id="title" boundsType="VISUAL" fill="WHITE" style="-fx-font-family: 'Atomic Age'; -fx-font-size: 96;" text="HOTELINO" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <effect>
-            <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
-                <color>
-                    <Color opacity="0.2" />
-                </color>
-            </DropShadow>
-        </effect>
-    </Text>
-</center>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="intro" fitHeight="768.0" fitWidth="1366.0" />
+             <Text fx:id="shadow2" boundsType="VISUAL" fill="WHITE" opacity="0.15" style="-fx-font-family: 'Atomic Age'; -fx-font-size: 96;" text="HOTELINO" translateY="-261.0" visible="false" StackPane.alignment="CENTER">
+                 <effect>
+                     <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                         <color>
+                             <Color opacity="0.2" />
+                         </color>
+                     </DropShadow>
+                 </effect>
+                 <StackPane.margin>
+                     <Insets top="100.0" />
+                 </StackPane.margin>
+             </Text>
+             <Text fx:id="shadow1" boundsType="VISUAL" fill="WHITE" layoutX="457.0" layoutY="81.0" opacity="0.2" style="-fx-font-family: 'Atomic Age'; -fx-font-size: 96;" text="HOTELINO" translateY="-236.0" visible="false">
+                 <effect>
+                     <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                         <color>
+                             <Color opacity="0.2" />
+                         </color>
+                     </DropShadow>
+                 </effect>
+                 <StackPane.margin>
+                     <Insets top="50.0" />
+                 </StackPane.margin>
+             </Text>
+          <Text fx:id="title" boundsType="VISUAL" fill="WHITE" style="-fx-font-family: 'Atomic Age'; -fx-font-size: 96;" text="HOTELINO" visible="false">
+              <effect>
+                  <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                      <color>
+                          <Color opacity="0.2" />
+                      </color>
+                  </DropShadow>
+              </effect>
+          </Text>
+         </children>
+      </StackPane>
+   </center>
 
 </BorderPane>

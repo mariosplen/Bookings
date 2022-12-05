@@ -2,9 +2,10 @@ module com.github.mariosplen.bookings {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires org.jfxtras.styles.jmetro;
+    requires javafx.media;
     requires java.sql.rowset;
     requires org.xerial.sqlitejdbc;
+
 
     exports bookings.controllers;
     exports bookings.application;
