@@ -3,6 +3,7 @@ package bookings.util;
 public class Views {
     public static final String LOADING = "/fxml/loading/loading-view.fxml";
     public static final String LOGIN = "/fxml/login/login-view.fxml";
+    public static final String REGISTER = "/fxml/register/register-view.fxml";
     public static final String MAIN = "/fxml/main-view.fxml";
     public static final String HOME = "/fxml/home/home-view.fxml";
     public static final String CALENDAR = "/fxml/calendar/calendar-view.fxml";

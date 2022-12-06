@@ -1,5 +1,10 @@
 .menuBtn {
     -fx-background-color : #5100FC;
+    -fx-padding: 0;
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 6;
 }
 
 .menuBtn:hover {
@@ -10,7 +15,7 @@
     -fx-background-color : #5100FC;
 }
 
-
-.menuBtnDisabled {
+.menuBtn:disabled {
     -fx-background-color : #696969;
+    -fx-opacity: 1.0;
 }

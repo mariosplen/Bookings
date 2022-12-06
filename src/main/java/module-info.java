@@ -15,7 +15,7 @@ module com.github.mariosplen.bookings {
     exports bookings.controllers.calendar;
     exports bookings.controllers.home;
     exports bookings.controllers.rooms;
-    exports bookings.controllers.login;
+    exports bookings.controllers.register;
     exports bookings.controllers.guests;
     exports bookings.controllers.loading;
 
@@ -27,6 +27,7 @@ module com.github.mariosplen.bookings {
     opens bookings.controllers.calendar to javafx.fxml;
     opens bookings.controllers.home to javafx.fxml;
     opens bookings.controllers.login to javafx.fxml;
+    opens bookings.controllers.register to javafx.fxml;
     opens bookings.controllers.rooms to javafx.fxml;
     opens bookings.controllers.guests to javafx.fxml;
     opens bookings.controllers.loading to javafx.fxml;

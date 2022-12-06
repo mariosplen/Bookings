@@ -1,12 +1,20 @@
-.signInBtn {
-    -fx-background-color : #5100FC;
+.loadBtn {
+    -fx-background-color  : #5100FC;
+    -fx-text-fill         : #FFFFFF;
+    -fx-background-radius : 32;
+    -fx-font-size         : 40;
+    -fx-font-weight       : bold;
+    -fx-border-radius     : 32;
+    -fx-border-color      : #000000;
+    -fx-border-width      : 1;
+    -fx-padding           : 0;
 }
 
-.signInBtn:hover {
+.loadBtn:hover {
     -fx-background-color : #7332FC;
 }
 
-.signInBtn:pressed {
+.loadBtn:pressed {
     -fx-background-color : #5100FC;
 }
 

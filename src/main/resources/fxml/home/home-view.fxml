@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Rectangle?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1"
-            prefHeight="548.0"
             prefWidth="1086.0"
             stylesheets="@home.css"
             xmlns="http://javafx.com/javafx/17.0.2-ea"
+            prefHeight="548.0"
             fx:controller="bookings.controllers.home.HomeView">
    <children>
       <Pane prefHeight="70.0"
@@ -32,10 +32,10 @@
             AnchorPane.leftAnchor="35.0"
             AnchorPane.topAnchor="35.0">
          <children>
-            <Button mnemonicParsing="false"
+            <Button disable="true"
+                    mnemonicParsing="false"
                     prefHeight="64.0"
                     prefWidth="270.0"
-                    style="-fx-padding: 0; -fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-radius: 6;"
                     styleClass="menuBtn"
                     text="Στατιστικά"/>
             <Pane prefWidth="200.0"
@@ -46,7 +46,6 @@
                     onAction="#navToUsers"
                     prefHeight="64.0"
                     prefWidth="270.0"
-                    style="-fx-padding: 0; -fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-radius: 6;"
                     styleClass="menuBtn"
                     text="Χρήστες"/>
             <Pane prefWidth="200.0"
@@ -57,7 +56,6 @@
                     onAction="#newReservation"
                     prefHeight="64.0"
                     prefWidth="270.0"
-                    style="-fx-padding: 0; -fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-radius: 6;"
                     styleClass="menuBtn"
                     text="Check-In"/>
             <Pane prefWidth="200.0"
@@ -68,7 +66,6 @@
                     onAction="#navToBooks"
                     prefHeight="64.0"
                     prefWidth="270.0"
-                    style="-fx-padding: 0; -fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-radius: 6;"
                     styleClass="menuBtn"
                     text="Κρατήσεις"/>
             <Pane prefWidth="200.0"
@@ -79,7 +76,6 @@
                     onAction="#navToGuests"
                     prefHeight="64.0"
                     prefWidth="270.0"
-                    style="-fx-padding: 0; -fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-radius: 6;"
                     styleClass="menuBtn"
                     text="Ένοικοι"/>
          </children>
@@ -109,7 +105,6 @@
             <Button mnemonicParsing="false"
                     prefHeight="64.0"
                     prefWidth="270.0"
-                    style="-fx-padding: 0; -fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-radius: 6;"
                     styleClass="menuBtn"
                     text="Έσοδα"/>
             <Pane VBox.vgrow="ALWAYS"/>
@@ -119,7 +114,6 @@
                     onAction="#navToCalendar"
                     prefHeight="64.0"
                     prefWidth="270.0"
-                    style="-fx-padding: 0; -fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-radius: 6;"
                     styleClass="menuBtn"
                     text="Ημερολόγιο"/>
             <Pane VBox.vgrow="ALWAYS"/>
@@ -129,7 +123,6 @@
                     onAction="#navToRooms"
                     prefHeight="64.0"
                     prefWidth="270.0"
-                    style="-fx-padding: 0; -fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-radius: 6;"
                     styleClass="menuBtn"
                     text="Δωμάτια"/>
          </children>

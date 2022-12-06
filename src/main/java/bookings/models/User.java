@@ -7,6 +7,7 @@ public record User(
         Boolean canDoBasic,
         Boolean canViewInfo,
         Boolean canManageGuests,
-        Boolean canManageUsers
+        Boolean canManageUsers,
+        String image
 ) {
 }

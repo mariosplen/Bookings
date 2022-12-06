@@ -57,4 +57,19 @@ public class LoginView {
 
 
     }
+
+    @FXML
+    private void onRegisterHLClicked() throws IOException {
+        // Initialize controller
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.REGISTER));
+        Scene scene = new Scene(loader.load());
+
+//        // Pass parameters to controller
+//        MainView mainView = loader.getController();
+//
+//        mainView.setStage(stage);
+
+        // Set scene to new window
+        stage.setScene(scene);
+    }
 }

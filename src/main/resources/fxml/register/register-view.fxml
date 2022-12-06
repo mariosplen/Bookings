@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="768" prefWidth="1366" style="-fx-background-color: #5100FC;" stylesheets="@register.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookings.controllers.register.RegisterView">
+
+
+    <Text boundsType="VISUAL" fill="WHITE" style="-fx-font-family: 'Atomic Age'; -fx-font-size: 96;" text="HOTELINO" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="75.0">
+        <effect>
+            <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                <color>
+                    <Color opacity="0.2" />
+                </color>
+            </DropShadow>
+        </effect>
+    </Text>
+    <BorderPane fx:id="mainPane" layoutX="92.0" layoutY="256.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 16;" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="160.0">
+        <center>
+            <AnchorPane prefHeight="548.0" prefWidth="1086.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 16;">
+                <children>
+                    <Pane prefHeight="70.0" style="-fx-background-color: #C6B3EF; -fx-background-radius: 3;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="14.0" />
+                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+                        <children>
+                            <Text boundsType="VISUAL" fill="BLACK" style="-fx-font-size: 40; -fx-font-weight: bold" text="ΕΓΓΡΑΦΗ ΧΡΗΣΤΗ" StackPane.alignment="CENTER">
+                            </Text>
+                            <Pane VBox.vgrow="ALWAYS" />
+                            <HBox>
+                                <children>
+                                    <VBox prefWidth="376.0">
+                                        <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Όνομα Χρήστη" textOrigin="TOP" />
+                                        <Region layoutX="60.0" layoutY="189.0" prefHeight="4.0" />
+                                        <TextField maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="64.0" style="-fx-background-radius: 3;" styleClass="credentialsTF" />
+                                        <Region prefHeight="16.0" />
+                                        <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Δημιουργία Κωδικού Πρόσβασης" textOrigin="TOP" />
+                                        <Region layoutX="60.0" layoutY="123.0" prefHeight="4.0" />
+                                        <PasswordField layoutX="60.0" layoutY="219.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="64.0" style="-fx-background-radius: 3;" styleClass="credentialsTF" />
+                                        <Region layoutX="10.0" layoutY="290.0" prefHeight="16.0" />
+                                        <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Μυστικός Κωδικός Ξενοδοχείου" textOrigin="TOP" />
+                                        <Region layoutX="60.0" layoutY="123.0" prefHeight="4.0" />
+                                        <PasswordField fx:id="passwordTF" layoutX="60.0" layoutY="219.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="64.0" style="-fx-background-radius: 3;" styleClass="credentialsTF">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin></PasswordField>
+
+                                        <Region prefHeight="16.0" />
+
+                                    </VBox>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <VBox alignment="TOP_CENTER">
+                                        <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Προφίλ" textOrigin="TOP" />
+                                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../icons/profile-circle.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="101.0" styleClass="loadBtn" text="ΜΕΤΑΦΟΡΤΩΣΗ" />
+
+                                    </VBox>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <VBox alignment="TOP_RIGHT" prefWidth="428.0">
+                                        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+                                            <children>
+                                                <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Δικαιώματα Χρήστη" textOrigin="TOP" />
+                                            </children>
+                                        </HBox>
+                                        <VBox maxHeight="-Infinity" maxWidth="-Infinity">
+                                            <children>
+                                                <CheckBox layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="permissionCB" text="Βασικές λειτουργίες" />
+                                                <CheckBox layoutX="10.0" layoutY="35.0" mnemonicParsing="false" styleClass="permissionCB" text="Προβολή στατιστικών" />
+                                                <CheckBox layoutX="10.0" layoutY="35.0" mnemonicParsing="false" styleClass="permissionCB" text="Επεξεργασία στοχείων ένοικων" />
+                                                <CheckBox layoutX="10.0" layoutY="85.0" mnemonicParsing="false" styleClass="permissionCB" text="Επεξεργασία στοιχείων χρηστών" />
+                                            </children>
+                                        </VBox>
+                                    </VBox>
+                                </children>
+                                <VBox.margin>
+                                    <Insets left="52.0" />
+                                </VBox.margin></HBox>
+                            <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="376.0" styleClass="registerBtn" text="Εγγραφή" />
+                            <Pane VBox.vgrow="ALWAYS" />
+                        </children></VBox>
+                </children>
+            </AnchorPane>
+        </center></BorderPane>
+    <padding>
+            <Insets left="20.0" />
+        </padding>
+
+
+</AnchorPane>

@@ -1,0 +1,73 @@
+
+
+.credentialsTF {
+    -fx-background-color : #C6B3EF;
+}
+
+.credentialsTF:hover {
+    -fx-background-color : #D1C2F2;
+}
+
+.credentialsTF:focused {
+    -fx-background-color : #D1C2F2;
+}
+
+.credentialsTF:disabled {
+    -fx-background-color : #FFFFFF;
+    -fx-opacity: 1.0;
+}
+
+.loadBtn {
+    -fx-background-color  : #5100FC;
+    -fx-text-fill         : #FFFFFF;
+    -fx-background-radius : 13;
+    -fx-font-size         : 10;
+    -fx-font-weight       : bold;
+    -fx-padding           : 0;
+}
+
+.loadBtn:hover {
+    -fx-background-color : #7332FC;
+}
+
+.loadBtn:pressed {
+    -fx-background-color : #5100FC;
+}
+
+.registerBtn {
+    -fx-background-color  : #5100FC;
+    -fx-text-fill         : #FFFFFF;
+    -fx-background-radius : 32;
+    -fx-font-size         : 40;
+    -fx-font-weight       : bold;
+    -fx-padding           : 0;
+}
+
+.registerBtn:hover {
+    -fx-background-color : #7332FC;
+}
+
+.registerBtn:pressed {
+    -fx-background-color : #5100FC;
+}
+
+.permissionCB{
+    -fx-font-size: 24;
+    -fx-text-fill: #000000;
+}
+
+.permissionCB:hover .box{
+    -fx-background-color: #E6E6E6;
+}
+
+.permissionCB .box{
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-color: #D9D9D9;
+}
+
+
+.check-box:selected .mark {
+    -fx-background-color: #5100FC;
+}
+
