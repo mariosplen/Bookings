@@ -1,0 +1,324 @@
+.ButtonUserInfo, .infoTF {
+    -fx-background-color: #C6B3EF;
+    -fx-background-radius: 3;
+    -fx-font-size: 32;
+    -fx-padding: 0;
+    -fx-text-fill: #000
+}
+
+.ButtonUserInfo:disabled {
+    -fx-opacity: 1;
+    -fx-text-fill: #545454
+}
+
+.ButtonUserInfo:hover {
+    -fx-text-fill: #e9f5f9
+}
+
+.availability-message {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FF5722
+}
+
+.backButton {
+    -fx-background-color: #FFF
+}
+
+.backgroundRectangle {
+    -fx-background-color: #C6B3EF;
+    -fx-background-radius: 3
+}
+
+.bigButton {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 32;
+    -fx-font-size: 40;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-text-fill: #FFF
+}
+
+.bigButton:hover, .mediumBtn:hover, .smallBtn:hover {
+    -fx-background-color: #7332FC
+}
+
+.blueBackground, .bigButton:pressed, .mediumBtn:pressed, .smallBtn:pressed, .check-box:selected .mark {
+    -fx-background-color: #5100FC
+}
+
+.calendarCell {
+    -fx-fill: #C6B3EF
+}
+
+.calendarCell:disabled {
+    -fx-border-width: 0;
+    -fx-effect: innershadow(gaussian, #000, 2, 0, 0, 0);
+    -fx-fill: #6100FF;
+    -fx-opacity: 1;
+    -fx-stroke-width: 0
+}
+
+.calendarCell:disabled:hover {
+    -fx-fill: #711BFF
+}
+
+.calendarCell:hover {
+    -fx-fill: #D3C2F6
+}
+
+.calendarCellTagBlack {
+    -fx-background-color: #F7F7F7;
+    -fx-font-size: 22px;
+    -fx-text-fill: #000
+}
+
+.calendarCellTagWhite {
+    -fx-background-color: #5100FC;
+    -fx-font-size: 22px;
+    -fx-text-fill: #FFF
+}
+
+.choice-box {
+    -fx-background-color: #C6B3EF;
+    -fx-font-size: 24px;
+    -fx-mark-color: #000
+}
+
+.choice-box .context-menu {
+    -fx-background-color: #C6B3EF
+}
+
+.choice-box .menu-item > .label {
+    -fx-text-fill: #FFF
+}
+
+.choice-box .menu-item:focused > .label, .choice-box .label {
+    -fx-text-fill: #000
+}
+
+.continue-button {
+    -fx-background-color: #5100FC;
+    -fx-border-radius: 5px;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 150px;
+    -fx-text-fill: #fff
+}
+
+.credentialsTF {
+    -fx-background-color: #C6B3EF;
+    -fx-background-radius: 3;
+    -fx-font-size: 24
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: -fx-primary-color;
+    -fx-background-radius: 0
+}
+
+.date-picker .arrow-button .arrow, .date-picker .cell {
+    -fx-background-color: #fff
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: #784ae3
+}
+
+.date-picker .cell:hover, .date-picker .cell:focused, .date-picker-popup .month-year-pane {
+    -fx-background-color: -fx-primary-color
+}
+
+.date-picker .selected, .date-picker .selected:focused {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: #fff
+}
+
+.date-picker-popup {
+    -fx-border-color: transparent
+}
+
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #fff
+}
+
+.date-picker-popup .spinner .button .left-arrow, .date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: -fx-secondary-color
+}
+
+.date-picker-popup .week-number-cell {
+    -fx-text-fill: -fx-secondary-color
+}
+
+.datePicker {
+    -fx-background-color: #5100FC;
+    -fx-focus-color: -fx-secondary-color;
+    -fx-font-size: 24px;
+    -fx-light-grey-color: #d1d1d1;
+    -fx-primary-color: #5100FC;
+    -fx-secondary-color: #5100FC
+}
+
+.errorMsg {
+    -fx-fill: #FF1212;
+    -fx-font-size: 13;
+    -fx-font-weight: bold
+}
+
+.formBackground {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 16
+}
+
+.hugeTxt {
+    -fx-font-family: 'Atomic Age';
+    -fx-font-size: 96
+}
+
+.hyperLink {
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent
+}
+
+.infoTF:hover, .credentialsTF:hover, .credentialsTF:focused, .choice-box .menu-item:focused, .choice-box:hover {
+    -fx-background-color: #D1C2F2
+}
+
+.logoutHBox:hover, .backButton:hover {
+    -fx-background-color: #e9f5f9
+}
+
+.logoutTitle {
+    -fx-font-size: 24
+}
+
+.medium2Bold {
+    -fx-font-size: 32;
+    -fx-font-weight: bold
+}
+
+.medium3Bold, .largeBold {
+    -fx-font-size: 40;
+    -fx-font-weight: bold
+}
+
+.mediumBold {
+    -fx-font-size: 20;
+    -fx-font-weight: bold
+}
+
+.mediumBtn {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 6;
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-stroke-width: 0;
+    -fx-text-fill: #FFF
+}
+
+.mediumBtn:disabled {
+    -fx-background-color: #696969;
+    -fx-opacity: 1
+}
+
+.newUserButtonImage:hover {
+    -fx-opacity: .5
+}
+
+.permissionCB {
+    -fx-font-size: 24;
+    -fx-text-fill: #000
+}
+
+.permissionCB .box {
+    -fx-background-color: #D9D9D9;
+    -fx-background-radius: 0;
+    -fx-border-width: 0
+}
+
+.permissionCB:hover .box {
+    -fx-background-color: #E6E6E6
+}
+
+.permissionsBoxesBackground {
+    -fx-background-color: #D9D9D9
+}
+
+.scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 5em
+}
+
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: transparent
+}
+
+.scroll-pane {
+    -fx-background-color: #B3A5D1;
+    -fx-background-radius: 8
+}
+
+.scroll-pane .menu-item {
+    -fx-border-color: transparent;
+    -fx-border-style: solid
+}
+
+.scroll-pane .scroll-arrow {
+    -fx-padding: 0 0 0 0
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: #B3A5D1
+}
+
+.smallBtn {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 6;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-padding: 14;
+    -fx-text-fill: #FFF
+}
+
+.smallBtnRed {
+    -fx-background-color: #ff3636;
+    -fx-background-radius: 6;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-padding: 14;
+    -fx-text-fill: #FFF
+}
+
+.smallBtnRed:hover {
+    -fx-background-color: #ff4c4c
+}
+
+.smallBtnRed:pressed {
+    -fx-background-color: #ff3636
+}
+
+.usernameTxt {
+    -fx-fill: #5100FC;
+    -fx-font-size: 30;
+    -fx-font-weight: bold
+}
+
+.usernameTxtTitle {
+    -fx-fill: #FFF;
+    -fx-font-size: 40;
+    -fx-font-weight: bold
+}

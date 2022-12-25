@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="524.0" prefWidth="931.0"
+            stylesheets="@../../bookings.css" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            fx:controller="bookings.controllers.reservation.ReservationDetailsView">
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="14.0" styleClass="largeBold"
+           text="Στοιχεία κράτησης" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+    <VBox alignment="CENTER" prefHeight="213.0" prefWidth="227.0"
+          style="-fx-background-color: #C6B3EF; -fx-background-radius: 3;" AnchorPane.leftAnchor="15.0"
+          AnchorPane.topAnchor="25.0">
+        <Text fx:id="roomIDText" layoutX="53.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              style="-fx-font-size: 24; -fx-font-weight: bold;" text="room: "/>
+        <Text fx:id="categoryText" strokeType="OUTSIDE" strokeWidth="0.0"
+              style="-fx-font-size: 24; -fx-font-weight: bold;" text="Φαρδύκλινο"/>
+        <Text fx:id="numberOfNightsText" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              style="-fx-font-size: 15;" text="κράτηση για 3 βράδια"/>
+        <Text layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              style="-fx-font-weight: bold; -fx-font-size: 24;" text="Τελικό κόστος:"/>
+        <Text fx:id="finalPriceText" strokeType="OUTSIDE" strokeWidth="0.0"
+              style="-fx-font-size: 84; -fx-font-weight: bold; -fx-fill: #2F37FF;" text="\$135"/>
+    </VBox>
+    <HBox layoutX="347.0" layoutY="198.0" spacing="10"/>
+    <VBox alignment="TOP_CENTER" layoutX="334.0" layoutY="112.0" prefHeight="200.0" prefWidth="146.0">
+        <Text strokeWidth="0.0" styleClass="mediumBold" text="Τιμή πόρτας"/>
+        <TextField fx:id="doorPrice" alignment="CENTER" onAction="#refresh" prefHeight="44.0" prefWidth="146.0"
+                   styleClass="credentialsTF" text="35"/>
+    </VBox>
+    <VBox alignment="TOP_CENTER" layoutX="514.0" layoutY="112.0" prefHeight="112.0" prefWidth="257.0" spacing="2.0">
+        <Text strokeWidth="0.0" styleClass="mediumBold" text="Έξτρα Χρέωσεις"/>
+        <HBox>
+            <CheckBox fx:id="christmasCB" mnemonicParsing="false" onAction="#refresh" prefHeight="35.0"
+                      prefWidth="171.0" style="-fx-font-size: 16;" styleClass="permissionCB"
+                      text="Χριστουγέννων"/>
+            <TextField fx:id="christmassPriceTF" alignment="CENTER" onAction="#refresh" prefHeight="32.0"
+                       prefWidth="37.0" style="-fx-font-size: 14;" styleClass="credentialsTF" text="0"/>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="37.0">
+            <CheckBox fx:id="easterCB" mnemonicParsing="false" onAction="#refresh" prefHeight="35.0"
+                      prefWidth="171.0" style="-fx-font-size: 16;" styleClass="permissionCB" text="Πάσχα"/>
+            <TextField fx:id="easterTF" alignment="CENTER" onAction="#refresh" prefHeight="32.0"
+                       prefWidth="37.0" style="-fx-font-size: 14;" styleClass="credentialsTF" text="0"/>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="72.0">
+            <CheckBox fx:id="summerCB" mnemonicParsing="false" onAction="#refresh" prefHeight="35.0"
+                      prefWidth="171.0" style="-fx-font-size: 16;" styleClass="permissionCB"
+                      text="Καλοκαιριού"/>
+            <TextField fx:id="summerTF" alignment="CENTER" onAction="#refresh" prefHeight="32.0"
+                       prefWidth="37.0" style="-fx-font-size: 14;" styleClass="credentialsTF" text="0"/>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="97.0">
+            <CheckBox fx:id="eventCB" mnemonicParsing="false" onAction="#refresh" prefHeight="35.0"
+                      prefWidth="171.0" style="-fx-font-size: 16;" styleClass="permissionCB"
+                      text="Εκθέσων πόλης"/>
+            <TextField fx:id="eventTF" alignment="CENTER" onAction="#refresh" prefHeight="32.0" prefWidth="37.0"
+                       style="-fx-font-size: 14;" styleClass="credentialsTF" text="0"/>
+        </HBox>
+    </VBox>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <VBox alignment="CENTER">
+            <Text fx:id="errorMsg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorMsg"/>
+            <Button fx:id="continueBtn" mnemonicParsing="false" prefHeight="58.0" prefWidth="193.0"
+                    styleClass="bigButton" text="Συνέχεια"/>
+        </VBox>
+    </HBox>
+    <padding>
+        <Insets bottom="80.0" left="80.0" right="80.0" top="80.0"/>
+    </padding>
+
+</AnchorPane>

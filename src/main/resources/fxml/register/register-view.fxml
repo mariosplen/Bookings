@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="768" prefWidth="1366" styleClass="blueBackground"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="bookings.controllers.register.RegisterView">
+
+    <Text boundsType="VISUAL" fill="WHITE" styleClass="hugeTxt" text="HOTELINO" AnchorPane.leftAnchor="45.0"
+          AnchorPane.topAnchor="75.0">
+        <effect>
+            <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                <color>
+                    <Color opacity="0.2"/>
+                </color>
+            </DropShadow>
+        </effect>
+    </Text>
+    <BorderPane fx:id="mainPane" styleClass="formBackground" AnchorPane.bottomAnchor="60.0"
+                AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="160.0">
+        <center>
+            <AnchorPane prefHeight="548.0" prefWidth="1086.0">
+                <Pane prefHeight="70.0" styleClass="backgroundRectangle" AnchorPane.bottomAnchor="14.0"
+                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="14.0"/>
+
+                <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+                    <HBox>
+                        <VBox.margin>
+                            <Insets left="52.0"/>
+                        </VBox.margin>
+                        <VBox prefWidth="376.0">
+                            <Text strokeWidth="0.0" styleClass="mediumBold" text="Όνομα Χρήστη"/>
+                            <TextField fx:id="usernameTF" prefHeight="64.0" styleClass="credentialsTF"/>
+                            <Text styleClass="mediumBold" text="Δημιουργία Κωδικού Πρόσβασης"/>
+                            <PasswordField fx:id="passwordTF" prefHeight="64.0" styleClass="credentialsTF"/>
+                            <Text styleClass="mediumBold" text="Μυστικός Κωδικός Ξενοδοχείου"/>
+                            <PasswordField fx:id="hotelKeyTF" prefHeight="64.0" styleClass="credentialsTF"/>
+
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <VBox alignment="TOP_RIGHT" prefWidth="428.0">
+                            <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+                                <Text styleClass="mediumBold" text="Δικαιώματα Χρήστη"/>
+                            </HBox>
+                            <VBox maxHeight="-Infinity" maxWidth="-Infinity">
+                                <CheckBox fx:id="basicCB" styleClass="permissionCB" text="Βασικές λειτουργίες"/>
+                                <CheckBox fx:id="statsCB" styleClass="permissionCB" text="Προβολή στατιστικών"/>
+                                <CheckBox fx:id="editGuestsCB" styleClass="permissionCB"
+                                          text="Επεξεργασία στοχείων ένοικων"/>
+                                <CheckBox fx:id="editUsersCB" styleClass="permissionCB"
+                                          text="Επεξεργασία στοιχείων χρηστών"/>
+                            </VBox>
+                        </VBox>
+                    </HBox>
+                    <Pane VBox.vgrow="ALWAYS"/>
+                    <Text fx:id="errorMsg" styleClass="errorMsg" visible="false"/>
+                    <Pane layoutX="10.0" layoutY="405.0" VBox.vgrow="ALWAYS"/>
+                    <Button onAction="#onRegisterBtnClicked" prefHeight="64.0" prefWidth="376.0" styleClass="bigButton"
+                            text="Εγγραφή"/>
+                    <Pane VBox.vgrow="ALWAYS"/>
+                    <Pane layoutX="10.0" layoutY="390.0" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </AnchorPane>
+        </center>
+        <top>
+            <HBox BorderPane.alignment="CENTER">
+                <Button onAction="#onBackButtonClicked" styleClass="backButton">
+                    <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="93.0" preserveRatio="true">
+                            <Image url="@../../icons/back.png"/>
+                        </ImageView>
+                    </graphic>
+                    <HBox.margin>
+                        <Insets left="25.0" top="15.0"/>
+                    </HBox.margin>
+                </Button>
+                <HBox alignment="CENTER" prefWidth="9999.0">
+                    <HBox.margin>
+                        <Insets right="135.0"/>
+                    </HBox.margin>
+                    <Text boundsType="VISUAL" fill="BLACK" styleClass="largeBold" text="ΕΓΓΡΑΦΗ ΧΡΗΣΤΗ">
+                    </Text>
+                </HBox>
+            </HBox>
+        </top>
+    </BorderPane>
+    <padding>
+        <Insets left="20.0"/>
+    </padding>
+    <stylesheets>
+        <URL value="@../../bookings.css"/>
+        <URL value="@../../fonts/AtomicAge/atomic_age.css"/>
+    </stylesheets>
+
+
+</AnchorPane>
