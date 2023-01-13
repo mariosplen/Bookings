@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="548.0" prefWidth="1126.0" stylesheets="@../../bookings.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mariosplen.bookings.controllers.books.BooksView">
+     <Label styleClass="header" text="Reservations" />
+
+    <TableView fx:id="bookTableView">
+        <columns>
+            <TableColumn fx:id="saveButtonColumn" text="Save" />
+            <TableColumn fx:id="deleteButtonColumn" text="Delete" />
+            <TableColumn fx:id="room_id" text="Room No" />
+            <TableColumn fx:id="room_category" text="Category" />
+            <TableColumn fx:id="guest_name" text="Guest" />
+            <TableColumn fx:id="check_in" text="Check-In" />
+            <TableColumn fx:id="check_out" text="Check-Out" />
+            <TableColumn fx:id="date" text="Date Added" />
+            <TableColumn fx:id="nights" text="Nights" />
+            <TableColumn fx:id="price"  text="Price" />
+        </columns>
+    </TableView>
+   <padding>
+      <Insets left="120.0" right="120.0" />
+   </padding>
+</VBox>

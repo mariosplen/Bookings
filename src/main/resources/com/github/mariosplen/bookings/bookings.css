@@ -1,0 +1,386 @@
+@font-face {
+    src: url("fonts/Solway/Solway-Bold.ttf");
+}
+
+.hotelinoTitle {
+    -fx-font-family: 'Atomic Age';
+    -fx-font-size: 96
+}
+
+.mainViewUsername {
+    -fx-fill: #FFF;
+    -fx-font-family: Solway;
+    -fx-font-size: 30;
+    -fx-font-weight: bold
+}
+
+.header {
+    -fx-font-family: Solway;
+    -fx-font-size: 40;
+    -fx-font-weight: bold
+}
+
+.mediumText {
+    -fx-font-family: Solway;
+    -fx-font-size: 20;
+    -fx-font-weight: bold
+}
+
+.smallText {
+    -fx-font-family: Solway;
+    -fx-font-size: 15;
+    -fx-font-weight: bold
+}
+
+.errorText {
+    -fx-fill: #FF1212;
+    -fx-font-family: Solway;
+    -fx-font-size: 15;
+    -fx-font-weight: bold
+}
+
+.bigBtn {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 32;
+    -fx-font-family: Solway;
+    -fx-font-size: 40;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-text-fill: #FFF
+}
+
+.mediumBtn {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 6;
+    -fx-font-family: Solway;
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-text-fill: #FFF
+}
+
+.smallBtn {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 6;
+    -fx-font-family: Solway;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-padding: 14;
+    -fx-text-fill: #FFF
+}
+
+/*noinspection CssUnusedSymbol*/
+.verySmallBtn {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 3;
+    -fx-font-family: Solway;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFF
+}
+
+.smallBtnRed {
+    -fx-background-color: #ff3636;
+    -fx-background-radius: 6;
+    -fx-font-family: Solway;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-padding: 14;
+    -fx-text-fill: #FFF
+}
+
+/*noinspection CssUnusedSymbol*/
+.verySmallRedBtn {
+    -fx-background-color: #ff3636;
+    -fx-background-radius: 3;
+    -fx-font-family: Solway;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFF
+}
+
+.mediumBtn:disabled {
+    -fx-background-color: #696969;
+    -fx-opacity: 1
+}
+
+.calendarLeftBtn {
+    -fx-background-radius: 0 0 0 6;
+    -fx-font-size: 24;
+    -fx-font-weight: normal
+}
+
+.calendarRightBtn {
+    -fx-background-radius: 0 0 6 0;
+    -fx-font-size: 24;
+    -fx-font-weight: normal
+}
+
+.basicTF {
+    -fx-background-color: #C6B3EF;
+    -fx-background-radius: 3;
+    -fx-font-size: 24
+}
+
+/*noinspection CssUnusedSymbol*/
+.basicTF:hover, .basicTF:focused, .choice-box .menu-item:focused, .choice-box:hover {
+    -fx-background-color: #D1C2F2
+}
+
+.logoutHBox:hover, .backButton:hover {
+    -fx-background-color: #e9f5f9
+}
+
+.checkBox {
+    -fx-font-size: 24;
+    -fx-text-fill: #000
+}
+
+/*noinspection CssUnusedSymbol*/
+.checkBox .box {
+    -fx-background-color: #D9D9D9;
+    -fx-background-radius: 0;
+    -fx-border-width: 0
+}
+
+/*noinspection CssUnusedSymbol*/
+.checkBox:hover .box {
+    -fx-background-color: #E6E6E6
+}
+
+.designPane {
+    -fx-background-color: #C6B3EF;
+    -fx-background-radius: 3
+}
+
+.choice-box {
+    -fx-background-color: #C6B3EF;
+    -fx-font-size: 24px;
+    -fx-mark-color: #000
+}
+
+/*noinspection CssUnusedSymbol*/
+.choice-box .context-menu {
+    -fx-background-color: #C6B3EF
+}
+
+.choice-box .menu-item > .label {
+    -fx-text-fill: #FFF
+}
+
+.choice-box .menu-item:focused > .label, .choice-box .label {
+    -fx-text-fill: #000
+}
+
+.date-picker {
+    -fx-background-color: #5100FC;
+    -fx-focus-color: -fx-secondary-color;
+    -fx-font-size: 24px;
+    -fx-light-grey-color: #d1d1d1;
+    -fx-primary-color: #5100FC;
+    -fx-secondary-color: #5100FC
+}
+
+/*noinspection CssUnusedSymbol*/
+.date-picker .arrow-button {
+    -fx-background-color: -fx-primary-color;
+    -fx-background-radius: 0
+}
+
+/*noinspection CssUnusedSymbol*/
+.date-picker .arrow-button .arrow, .date-picker .cell {
+    -fx-background-color: #fff
+}
+
+/*noinspection CssUnusedSymbol*/
+.date-picker .arrow-button:hover {
+    -fx-background-color: #784ae3
+}
+
+/*noinspection CssUnusedSymbol*/
+.date-picker .cell:hover, .date-picker .cell:focused, .date-picker-popup .month-year-pane {
+    -fx-background-color: -fx-primary-color
+}
+
+/*noinspection CssUnusedSymbol*/
+.date-picker .selected, .date-picker .selected:focused {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: #fff
+}
+
+/*noinspection CssUnusedSymbol*/
+.date-picker-popup {
+    -fx-border-color: transparent
+}
+
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #fff
+}
+
+/*noinspection CssUnusedSymbol*/
+.date-picker-popup .spinner .button .left-arrow, .date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: -fx-secondary-color
+}
+
+/*noinspection CssUnusedSymbol*/
+.date-picker-popup .week-number-cell {
+    -fx-text-fill: -fx-secondary-color
+}
+
+.permissionsBoxesBackground {
+    -fx-background-color: #D9D9D9
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb {
+    -fx-background-color: #5100FC;
+    -fx-background-radius: 5em
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroll-pane {
+    -fx-background-color: #B3A5D1;
+    -fx-background-radius: 8
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroll-pane .menu-item {
+    -fx-border-color: transparent;
+    -fx-border-style: solid
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroll-pane .scroll-arrow {
+    -fx-padding: 0 0 0 0
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroll-pane > .corner {
+    -fx-background-color: #B3A5D1
+}
+
+/*noinspection CssUnusedSymbol*/
+.calendarCell {
+    -fx-fill: #C6B3EF
+}
+
+/*noinspection CssUnusedSymbol*/
+.calendarCell:disabled {
+    -fx-border-width: 0;
+    -fx-effect: innershadow(gaussian, #000, 2, 0, 0, 0);
+    -fx-fill: #6100FF;
+    -fx-opacity: 1;
+    -fx-stroke-width: 0
+}
+
+/*noinspection CssUnusedSymbol*/
+.calendarCell:disabled:hover {
+    -fx-fill: #711BFF
+}
+
+/*noinspection CssUnusedSymbol*/
+.calendarCell:hover {
+    -fx-fill: #D3C2F6
+}
+
+/*noinspection CssUnusedSymbol*/
+.calendarCellTagBlack {
+    -fx-background-color: #F7F7F7;
+    -fx-font-size: 22px;
+    -fx-text-fill: #000
+}
+
+/*noinspection CssUnusedSymbol*/
+.calendarCellTagWhite {
+    -fx-background-color: #5100FC;
+    -fx-font-size: 22px;
+    -fx-text-fill: #FFF
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, rgba(81, 0, 252, 0.27), #C6B3EF44);
+    -fx-background-insets: 0 11px 0 0;
+    -fx-background-radius: 7px 7px 0 0;
+    -fx-padding: 0 0 5px 0
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-row-cell:hover {
+    -fx-background-color: #93f9b911;
+    -fx-text-background-color: red
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-row-cell:odd {
+    -fx-background-color: #93f9b911;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-row-cell:even {
+    -fx-background-color: #1dbbdd11;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-view .virtual-flow .scroll-bar .increment-button, .table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-view .virtual-flow .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, #1dbbdd44, #93f9b944)
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to right, #1dbbdd44, #93f9b944)
+}
+
+/*noinspection CssUnusedSymbol*/
+.table-row-cell:selected {
+    -fx-background-color: #81c483;
+    -fx-background-radius: 15px
+}
+
+/*noinspection CssUnusedSymbol*/
+.mainView, .blueBackground, .bigButton:pressed, .mediumBtn:pressed, .smallBtn:pressed, .check-box:selected .mark {
+    -fx-background-color: #5100FC
+}
+
+/*noinspection CssUnusedSymbol*/
+.smallBtnRed:hover, .verySmallRedBtn:hover {
+    -fx-background-color: #ff4c4c
+}
+
+/*noinspection CssUnusedSymbol*/
+.bigButton:hover, .mediumBtn:hover, .smallBtn:hover, .verySmallBtn:hover {
+    -fx-background-color: #7332FC
+}
+
+.contentPane, .backButton {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 16
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroll-bar:horizontal, .scroll-bar:vertical, .table-view, .table-view .column-header-background .filler, .table-view .corner, .table-view .column-header, .table-view .virtual-flow .scroll-bar:vertical, .table-view .virtual-flow .scroll-bar:vertical .track, .table-view .virtual-flow .scroll-bar:vertical .track-background, .table-view .virtual-flow .scroll-bar:horizontal, .table-view .virtual-flow .scroll-bar:horizontal .track, .table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent
+}

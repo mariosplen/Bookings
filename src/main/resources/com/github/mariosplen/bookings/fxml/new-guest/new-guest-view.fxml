@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@../../bookings.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mariosplen.bookings.controllers.new_guest.NewGuestView">
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="New Guest" />
+    <HBox alignment="CENTER">
+        <VBox spacing="5.0">
+            <Button accessibleRole="TEXT" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="basicTF" text="Name" />
+            <Button accessibleRole="TEXT" layoutX="10.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="basicTF" text="Phone" />
+            <Button accessibleRole="TEXT" layoutX="10.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="basicTF" text="email" />
+        </VBox>
+        <Region prefWidth="80.0" />
+        <VBox alignment="CENTER" spacing="5.0">
+            <TextField fx:id="nameTF" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="270.0" promptText="Name" styleClass="basicTF" />
+            <TextField fx:id="phoneTF" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="270.0" promptText="Phone" styleClass="basicTF" />
+            <TextField fx:id="emailTF" alignment="CENTER" layoutX="10.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="270.0" promptText="email" styleClass="basicTF" />
+        </VBox>
+    </HBox>
+    <Text fx:id="errorMsg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorText" />
+    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onSaveClicked" prefHeight="50.0" prefWidth="270.0" styleClass="mediumBtn" text="Save" />
+</VBox>

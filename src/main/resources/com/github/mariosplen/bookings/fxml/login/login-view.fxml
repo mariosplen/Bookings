@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="768.0" prefWidth="1366.0" styleClass="mainView" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mariosplen.bookings.controllers.login.LoginView">
+    <stylesheets>
+        <URL value="@../../fonts/AtomicAge/atomic_age.css" />
+
+        <URL value="@../../bookings.css" />
+    </stylesheets>
+    <StackPane>
+        <Text boundsType="VISUAL" fill="WHITE" opacity="0.15" styleClass="hotelinoTitle" text="HOTELINO" StackPane.alignment="CENTER">
+            <effect>
+                <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                    <color>
+                        <Color opacity="0.2" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <StackPane.margin>
+                <Insets top="100.0" />
+            </StackPane.margin>
+        </Text>
+        <Text boundsType="VISUAL" fill="WHITE" layoutX="457.0" layoutY="81.0" opacity="0.2" styleClass="hotelinoTitle" text="HOTELINO">
+            <effect>
+                <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                    <color>
+                        <Color opacity="0.2" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <StackPane.margin>
+                <Insets top="50.0" />
+            </StackPane.margin>
+        </Text>
+        <Text boundsType="VISUAL" fill="WHITE" layoutX="457.0" layoutY="81.0" styleClass="hotelinoTitle" text="HOTELINO">
+            <effect>
+                <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
+                    <color>
+                        <Color opacity="0.2" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </Text>
+    </StackPane>
+    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="422.0" prefWidth="499.0" spacing="9.0" styleClass="contentPane">
+        <Text styleClass="header" text="Login" />
+        <Pane>
+            <Text boundsType="VISUAL" styleClass="mediumText" text="Username" textOrigin="TOP" />
+        </Pane>
+        <TextField fx:id="usernameTF" prefHeight="64.0" styleClass="basicTF" />
+        <Pane layoutX="74.0" layoutY="64.0">
+            <Text boundsType="VISUAL" styleClass="mediumText" text="Password" textOrigin="TOP" />
+        </Pane>
+        <PasswordField fx:id="passwordTF" prefHeight="64.0" styleClass="basicTF" />
+        <Pane>
+            <Hyperlink onAction="#onForgotPassHLClicked" styleClass="smallText" text="Forgot Password?" />
+        </Pane>
+        <Text fx:id="errorMsg" boundsType="VISUAL" styleClass="errorText" text="Username doesn't exist or wrong Password" textOrigin="TOP" visible="false" />
+        <Button defaultButton="true" maxWidth="1.7976931348623157E308" onAction="#onLoginBtnClicked" prefHeight="64.0" styleClass="bigBtn" text="Login" />
+        <HBox alignment="CENTER">
+            <Text boundsType="VISUAL" styleClass="smallText" text="Need an account?" textOrigin="TOP"/>
+            <Hyperlink onAction="#onRegisterHLClicked" styleClass="smallText" text="SIGN UP" underline="true"/>
+        </HBox>
+        <padding>
+            <Insets left="64.0" right="64.0" />
+        </padding>
+    </VBox>
+</VBox>

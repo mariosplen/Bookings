@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="231.0" prefWidth="378.0" spacing="50.0" stylesheets="@../../bookings.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mariosplen.bookings.controllers.users.UsersView">
+    <HBox alignment="CENTER" spacing="10.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Users" />
+    </HBox>
+    <HBox>
+        <Pane HBox.hgrow="ALWAYS" />
+        <ScrollPane hbarPolicy="NEVER">
+            <HBox.margin>
+                <Insets bottom="20.0" />
+            </HBox.margin>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+                <VBox fx:id="usersVBox" alignment="CENTER" spacing="5.0" />
+            </AnchorPane>
+        </ScrollPane>
+        <Pane HBox.hgrow="ALWAYS" />
+    </HBox>
+    <Pane layoutX="10.0" layoutY="64.0" VBox.vgrow="ALWAYS" />
+
+</VBox>

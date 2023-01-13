@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.controlsfx.control.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@../../bookings.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mariosplen.bookings.controllers.guests.GuestsView">
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Edit Guests" />
+    <SearchableComboBox fx:id="usersSearchBox" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#selectedNewUserClicked" prefHeight="60.0" prefWidth="420.0" styleClass="choice-box" />
+    <HBox alignment="CENTER">
+        <VBox spacing="5.0">
+            <Button fx:id="selectedBtn" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="basicTF" text="Select">
+                <VBox.margin>
+                    <Insets bottom="8.0" />
+                </VBox.margin>
+            </Button>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#clickedEditSelector" prefHeight="50.0" prefWidth="270.0" styleClass="basicTF" text="Name" />
+            <Button layoutX="10.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#clickedEditSelector" prefHeight="50.0" prefWidth="270.0" styleClass="basicTF" text="Phone" />
+            <Button layoutX="10.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#clickedEditSelector" prefHeight="50.0" prefWidth="270.0" styleClass="basicTF" text="email" />
+        </VBox>
+        <Region prefWidth="80.0" />
+        <VBox>
+            <TextField fx:id="selectedTF" alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="270.0" styleClass="basicTF" text="Select" />
+
+            <Pane VBox.vgrow="ALWAYS" />
+            <Button defaultButton="true" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onSaveClicked" prefHeight="50.0" prefWidth="270.0" styleClass="mediumBtn" text="Save" />
+        </VBox>
+    </HBox>
+   <Label fx:id="msg" styleClass="mediumText" text="Changes were successfully saved!" visible="false" />
+</VBox>

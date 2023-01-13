@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="548.0" prefWidth="1126.0" AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea"
+            fx:controller="com.github.mariosplen.bookings.controllers.register.RegisterView">
+    <HBox alignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+        <Text boundsType="VISUAL" fill="BLACK" styleClass="header" text="Sign-Up">
+        </Text>
+    </HBox>
+    <HBox layoutY="79.0" prefHeight="377.0" prefWidth="1022.0" AnchorPane.leftAnchor="52.0"
+          AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="49.0">
+        <VBox.margin>
+            <Insets left="52.0"/>
+        </VBox.margin>
+        <VBox prefWidth="376.0" spacing="9.0">
+            <Text strokeWidth="0.0" styleClass="mediumText" text="Username"/>
+            <TextField fx:id="usernameTF" prefHeight="64.0" styleClass="basicTF"/>
+            <Text styleClass="mediumText" text="Create Password"/>
+            <PasswordField fx:id="passwordTF" prefHeight="64.0" styleClass="basicTF"/>
+            <Text styleClass="mediumText" text="Secret Hotel Key"/>
+            <PasswordField fx:id="hotelKeyTF" prefHeight="64.0" styleClass="basicTF"/>
+
+        </VBox>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <VBox alignment="TOP_RIGHT" prefWidth="428.0" spacing="9.0">
+            <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+                <Text styleClass="mediumText" text="User Permissions"/>
+            </HBox>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" spacing="9.0">
+                <CheckBox fx:id="basicCB" styleClass="checkBox" text="Basic Functionality"/>
+                <CheckBox fx:id="editGuestsCB" styleClass="checkBox" text="Edit Guests"/>
+                <CheckBox fx:id="editUsersCB" styleClass="checkBox" text="Edit Users"/>
+            </VBox>
+        </VBox>
+    </HBox>
+    <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0">
+        <Text fx:id="errorMsg" styleClass="errorText" visible="false"/>
+        <Button onAction="#onRegisterBtnClicked" prefHeight="64.0" prefWidth="376.0" styleClass="bigBtn"
+                text="Sign-Up"/>
+    </VBox>
+    <stylesheets>
+        <URL value="@../../bookings.css"/>
+        <URL value="@../../fonts/AtomicAge/atomic_age.css"/>
+    </stylesheets>
+    <opaqueInsets>
+        <Insets/>
+    </opaqueInsets>
+    <padding>
+        <Insets top="30.0"/>
+    </padding>
+</AnchorPane>

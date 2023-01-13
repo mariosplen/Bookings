@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" stylesheets="@../../bookings.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mariosplen.bookings.controllers.calendar.CalendarView">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" />
+    </padding>
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Calendar">
+        <VBox.margin>
+            <Insets bottom="15.0" />
+        </VBox.margin>
+    </Text>
+    <HBox alignment="CENTER">
+        <DatePicker fx:id="fromDP" />
+        <Region prefWidth="88.0" />
+        <DatePicker fx:id="toDP" />
+    </HBox>
+    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#setCalendarData" prefHeight="45.0" prefWidth="250.0" styleClass="mediumBtn" text="Search">
+        <VBox.margin>
+            <Insets bottom="15.0" top="12.0" />
+        </VBox.margin>
+    </Button>
+    <VBox >
+        <ScrollPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+                <GridPane fx:id="gridPane" alignment="CENTER">
+
+
+                </GridPane>
+            </AnchorPane>
+        </ScrollPane>
+        <HBox>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onPrevMonthClk" prefHeight="55.0" prefWidth="300.0" text="Next Month">
+            <styleClass>
+               <String fx:value="mediumBtn" />
+               <String fx:value="calendarLeftBtn" />
+            </styleClass></Button>
+            <Pane style="-fx-background-color: #9F8CC7;" HBox.hgrow="ALWAYS" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onNextMonthClk" prefHeight="55.0" prefWidth="300.0" text="Previous Month">
+            <styleClass>
+               <String fx:value="mediumBtn" />
+               <String fx:value="calendarRightBtn" />
+            </styleClass></Button>
+        </HBox>
+    </VBox>
+</VBox>

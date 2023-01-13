@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" stylesheets="@../../bookings.css"
+      xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.github.mariosplen.bookings.controllers.reservation.ReservationView">
+    <Text styleClass="mediumText" text="Room Category"/>
+    <ChoiceBox fx:id="categoryChoiceBox" prefHeight="64.0" prefWidth="270.0"/>
+    <Region prefHeight="25.0" prefWidth="613.0"/>
+    <HBox alignment="CENTER">
+        <Pane HBox.hgrow="ALWAYS"/>
+        <VBox>
+            <Text styleClass="mediumText" text="Check-In"/>
+            <DatePicker fx:id="checkInDP" prefHeight="64.0" prefWidth="270.0" styleClass="date-picker"/>
+        </VBox>
+        <Region prefWidth="50.0"/>
+        <ImageView fitHeight="77.0" fitWidth="49.0" preserveRatio="true">
+            <Image url="@../../media/icons/arrow.png"/>
+        </ImageView>
+        <Region layoutX="242.0" layoutY="10.0" prefWidth="50.0"/>
+        <VBox>
+            <Text styleClass="mediumText" text="Check-Out"/>
+            <DatePicker fx:id="checkOutDP" prefHeight="64.0" prefWidth="270.0" styleClass="date-picker"/>
+        </VBox>
+        <Pane HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <Region layoutX="10.0" layoutY="92.0" prefHeight="25.0" prefWidth="613.0"/>
+    <Button onAction="#checkAvailabilityClicked" styleClass="smallBtn" text="CHECK AVAILABILITY"/>
+    <Label fx:id="errorLabel" text="No rooms available" visible="false"/>
+    <Button fx:id="continueButton" prefHeight="58.0" prefWidth="400.0"
+            styleClass="bigBtn" text="Continue" visible="false"/>
+    <Region layoutX="10.0" layoutY="195.0" prefHeight="100.0"/>
+</VBox>
