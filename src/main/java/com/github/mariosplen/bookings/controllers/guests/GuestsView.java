@@ -64,7 +64,7 @@ public class GuestsView implements Initializable {
         if (guest != null) {
             // Set the text of the selected text field to the selected info for the guest
             assert selectedInfoToEdit != null;
-            selectedTF.setText(selectedInfoToEdit);
+            selectedTF.setText(fromInfoToValue(selectedInfoToEdit));
         }
     }
 
@@ -75,8 +75,20 @@ public class GuestsView implements Initializable {
 
         if (guest != null && selectedInfoToEdit != null) {
             // Set the text of the selected text field to the selected info for the guest
-            selectedTF.setText(selectedInfoToEdit);
+
+            selectedTF.setText(fromInfoToValue(selectedInfoToEdit));
         }
+    }
+
+    private String fromInfoToValue(String selectedInfoToEdit) {
+        String text;
+        switch (selectedInfoToEdit) {
+            case "Name" -> text = guest.name();
+            case "Phone" -> text = guest.phone();
+            case "email" -> text = guest.email();
+            default -> text = selectedInfoToEdit;
+        }
+        return text;
     }
 
 

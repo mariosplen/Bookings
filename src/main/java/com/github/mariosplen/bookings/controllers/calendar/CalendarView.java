@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
@@ -108,29 +107,6 @@ public class CalendarView implements Initializable {
             }
         }
 
-
-        roomBookDates.forEach((integer, localDates) -> {
-            for (int i = 0; i < rooms.size(); i++) {
-                if (String.valueOf(rooms.get(i).id()).equals(String.valueOf(integer))) {
-                    for (LocalDate date : localDates) {
-                        for (int j = 0; j < allDates.size(); j++) {
-                            if (allDates.get(j).equals(date)) {
-                                int finalI = i;
-                                int finalJ = j;
-                                gridPane.getChildren().forEach(node -> {
-                                    if (GridPane.getColumnIndex(node) == (finalJ + 1) && GridPane.getRowIndex(node) == (finalI + 1)) {
-                                        node.setDisable(true);
-                                        Tooltip.install(node, new Tooltip("Book_id = " + integer));
-                                    }
-                                });
-                            }
-                        }
-
-                    }
-                }
-            }
-
-        });
     }
 
     public void onNextMonthClk() {

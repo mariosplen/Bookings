@@ -9,7 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9daa437-88c7-4a02-bb21-70478c701b0b" name="Changes" comment="artifacts done" />
+    <list default="true" id="d9daa437-88c7-4a02-bb21-70478c701b0b" name="Changes" comment="artifacts done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/calendar/CalendarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/calendar/CalendarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/guests/GuestsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/guests/GuestsView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,19 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mario/IdeaProjects/Bookings/src/main/java/com/github/mariosplen&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "C:/Users/mario/IdeaProjects/Bookings/src/main/java/com/github/mariosplen",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mario\IdeaProjects\Bookings\src\main\java\com\github\mariosplen" />
@@ -101,6 +106,7 @@
       <workItem from="1673632348883" duration="16867000" />
       <workItem from="1673656223503" duration="1498000" />
       <workItem from="1673659745260" duration="45000" />
+      <workItem from="1673717496423" duration="984000" />
     </task>
     <task id="LOCAL-00001" summary="Done">
       <created>1673648236720</created>
