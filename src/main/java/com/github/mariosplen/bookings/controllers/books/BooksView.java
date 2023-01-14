@@ -3,8 +3,6 @@ package com.github.mariosplen.bookings.controllers.books;
 
 import com.github.mariosplen.bookings.models.Book;
 import com.github.mariosplen.bookings.models.BookDAO;
-import com.github.mariosplen.bookings.models.Guest;
-import com.github.mariosplen.bookings.models.GuestDAO;
 import com.github.mariosplen.bookings.util.ReceiptGenerator;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -20,7 +18,6 @@ import javafx.scene.control.TableView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class BooksView implements Initializable {
@@ -65,16 +62,13 @@ public class BooksView implements Initializable {
                         Book book = getTableView().getItems().get(getIndex());
                         try {
                             ReceiptGenerator receiptGenerator = new ReceiptGenerator();
-                            receiptGenerator.genReceipt(GuestDAO.getGuests().stream()
-                                            .map(Guest::name)
-                                            .filter(name -> Objects.equals(name, book.guestName()))
-                                            .findFirst()
-                                            .orElse(null),
+                            receiptGenerator.genReceipt(
+                                    book.guestName(),
                                     book.checkIn(),
                                     book.checkOut(),
                                     book.totalPrice()
                             );
-                        } catch (IOException | SQLException | ClassNotFoundException e) {
+                        } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     });

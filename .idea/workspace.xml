@@ -10,86 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9daa437-88c7-4a02-bb21-70478c701b0b" name="Changes" comment="Done">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Bookings_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0ae1950a-c940-4c90-bdb8-2907a895397f.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/database/bookings.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/Bookings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/MainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/books/BooksView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/calendar/CalendarView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/calendar/ColoredItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/guests/GuestsView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/home/HomeView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/loading/LoadingView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/login/LoginView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/new_guest/NewGuestView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/recovery/RecoverView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/register/RegisterView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/reservation/ReservationDetailsView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/reservation/ReservationView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/users/UserItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/users/UsersView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/BookDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/Guest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/GuestDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/RoomDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/SettingsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/models/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/util/DBManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/util/Nav.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/util/ReceiptGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/util/Views.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/bookings.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/AtomicAge/AtomicAge-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/AtomicAge/OFL.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/AtomicAge/atomic_age.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/Solway/OFL.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/Solway/Solway-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/Solway/Solway-ExtraBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/Solway/Solway-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/Solway/Solway-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fonts/Solway/Solway-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/books/books-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/calendar/calendar-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/guests/guests-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/home/home-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/loading/loading-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/login/login-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/main-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/new-guest/new-guest-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/recovery/recovery-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/register/register-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/reservation/reservation-details-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/reservation/reservation-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/users/user-item.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/fxml/users/users-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/media/icons/add-user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/media/icons/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/media/icons/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/media/icons/gear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/media/icons/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/media/icons/logout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/media/icons/profile-circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/media/intro/intro.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/github/mariosplen/bookings/HelloApplication.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/github/mariosplen/bookings/HelloController.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/database/bookings.db" beforeDir="false" afterPath="$PROJECT_DIR$/assets/database/bookings.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/books/BooksView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/books/BooksView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/util/ReceiptGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/util/ReceiptGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/bookings.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/bookings.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,19 +50,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mario/IdeaProjects/Bookings/src/main/java/com/github/mariosplen",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mario/IdeaProjects/Bookings/src/main/java/com/github/mariosplen&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mario\IdeaProjects\Bookings\src\main\java\com\github\mariosplen" />
@@ -179,8 +104,17 @@
       <workItem from="1673473441001" duration="3036000" />
       <workItem from="1673609581676" duration="5278000" />
       <workItem from="1673615287349" duration="16428000" />
-      <workItem from="1673632348883" duration="15863000" />
+      <workItem from="1673632348883" duration="16867000" />
+      <workItem from="1673656223503" duration="631000" />
     </task>
+    <task id="LOCAL-00001" summary="Done">
+      <created>1673648236720</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673648236720</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

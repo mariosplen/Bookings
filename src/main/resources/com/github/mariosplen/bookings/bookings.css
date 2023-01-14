@@ -361,7 +361,7 @@
 }
 
 /*noinspection CssUnusedSymbol*/
-.mainView, .blueBackground, .bigButton:pressed, .mediumBtn:pressed, .smallBtn:pressed, .check-box:selected .mark {
+.mainView, .blueBackground, .bigBtn:pressed, .mediumBtn:pressed, .smallBtn:pressed, .check-box:selected .mark {
     -fx-background-color: #5100FC
 }
 
@@ -371,7 +371,7 @@
 }
 
 /*noinspection CssUnusedSymbol*/
-.bigButton:hover, .mediumBtn:hover, .smallBtn:hover, .verySmallBtn:hover {
+.bigBtn:hover, .mediumBtn:hover, .smallBtn:hover, .verySmallBtn:hover {
     -fx-background-color: #7332FC
 }
 

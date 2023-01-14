@@ -6,7 +6,6 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -41,14 +40,14 @@ public class ReceiptGenerator {
 
         cs.beginText();
         cs.setFont(PDType1Font.HELVETICA_BOLD, 40);
-        cs.setNonStrokingColor(Color.getColor("5100FC"));
+        cs.setNonStrokingColor(81, 0, 252);
         cs.newLineAtOffset(75, 700);
         cs.showText("HOTELINO");
         cs.endText();
 
         cs.beginText();
         cs.setFont(PDType1Font.TIMES_ROMAN, 28);
-        cs.setNonStrokingColor(Color.black);
+        cs.setNonStrokingColor(0, 0, 0);
         cs.newLineAtOffset(100, 675);
         cs.showText("Invoice");
         cs.endText();
@@ -89,10 +88,10 @@ public class ReceiptGenerator {
 
         cs.beginText();
         cs.setFont(PDType1Font.TIMES_ROMAN, 20);
-        cs.setNonStrokingColor(Color.getColor("5100FC"));
+        cs.setNonStrokingColor(81, 0, 252);
         cs.newLineAtOffset(100, 210);
         cs.showText("Total:");
-        cs.setNonStrokingColor(Color.black);
+        cs.setNonStrokingColor(0, 0, 0);
         cs.endText();
 
 
@@ -125,10 +124,10 @@ public class ReceiptGenerator {
 
         cs.beginText();
         cs.setFont(PDType1Font.TIMES_ROMAN, 21);
-        cs.setNonStrokingColor(Color.getColor("5100FC"));
+        cs.setNonStrokingColor(81, 0, 252);
         cs.newLineAtOffset(250, 210);
         cs.showText(total + "€");
-        cs.setNonStrokingColor(Color.black);
+        cs.setNonStrokingColor(0, 0, 0);
         cs.endText();
 
 
