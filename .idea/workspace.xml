@@ -9,12 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9daa437-88c7-4a02-bb21-70478c701b0b" name="Changes" comment="Done">
+    <list default="true" id="d9daa437-88c7-4a02-bb21-70478c701b0b" name="Changes" comment="PDFs now working and bigBtn hover fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/database/bookings.db" beforeDir="false" afterPath="$PROJECT_DIR$/assets/database/bookings.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/books/BooksView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/controllers/books/BooksView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/util/ReceiptGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mariosplen/bookings/util/ReceiptGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/bookings.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/github/mariosplen/bookings/bookings.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +101,7 @@
       <workItem from="1673609581676" duration="5278000" />
       <workItem from="1673615287349" duration="16428000" />
       <workItem from="1673632348883" duration="16867000" />
-      <workItem from="1673656223503" duration="631000" />
+      <workItem from="1673656223503" duration="1361000" />
     </task>
     <task id="LOCAL-00001" summary="Done">
       <created>1673648236720</created>
@@ -114,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673648236720</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="PDFs now working and bigBtn hover fixed">
+      <created>1673657023521</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673657023521</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +136,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done" />
+    <MESSAGE value="PDFs now working and bigBtn hover fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="PDFs now working and bigBtn hover fixed" />
   </component>
 </project>
