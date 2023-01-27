@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.models;
 
-
 import com.github.mariosplen.bookings.util.DBManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,7 +18,6 @@ public class GuestDAO {
         return guests;
     }
 
-
     public static Guest getGuestFromRs(ResultSet rs) throws SQLException {
         return new Guest(
                 rs.getString("name"),
@@ -35,23 +33,16 @@ public class GuestDAO {
         return guests;
     }
 
-
     public static void addGuest(String name, String phone, String email) throws SQLException, ClassNotFoundException {
-        String query = """
-                INSERT INTO guests(name, phone, email)
-                VALUES(?,?,?)
-                """;
+        String query = " INSERT INTO guests(name, phone, email) VALUES(?,?,?) ";
         DBManager.dbExecuteUpdate(query, name, phone, email);
 
     }
 
     public static void updateData(String name, String perm, String value) throws SQLException, ClassNotFoundException {
 
-        String   query = """
-                    UPDATE guests SET '%s' = ?
-                    WHERE name = ?
-                    """.formatted(perm);
-            DBManager.dbExecuteUpdate(query, value, name);
+        String query = String.format("UPDATE guests SET '%s' = ? WHERE name = ?", perm);
+        DBManager.dbExecuteUpdate(query, value, name);
 
     }
 

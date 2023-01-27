@@ -19,11 +19,11 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoadingView implements Initializable {
+
     @FXML
     private Text shadow1, shadow2, title;
     @FXML
     private MediaView intro;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -84,11 +84,11 @@ public class LoadingView implements Initializable {
 
         player.setAutoPlay(true);
 
-
         intro.setMediaPlayer(player);
 
         // Show the title when the video ends
         player.setOnEndOfMedia(() -> {
+            intro.setVisible(false);
             title.setVisible(true);
             sequentialTransition.play();
         });

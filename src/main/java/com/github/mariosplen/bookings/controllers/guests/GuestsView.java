@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.controllers.guests;
 
-
 import com.github.mariosplen.bookings.models.Guest;
 import com.github.mariosplen.bookings.models.GuestDAO;
 import javafx.collections.FXCollections;
@@ -8,9 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.controlsfx.control.SearchableComboBox;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -21,6 +20,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class GuestsView implements Initializable {
+
     @FXML
     private Label msg;
     @FXML
@@ -29,7 +29,7 @@ public class GuestsView implements Initializable {
     private TextField selectedTF;
     private Guest guest;
     @FXML
-    private SearchableComboBox<String> usersSearchBox;
+    private ComboBox<String> usersSearchBox;
     private String selectedInfoToEdit;
     private Map<String, Guest> guestMap;
 
@@ -64,8 +64,28 @@ public class GuestsView implements Initializable {
         if (guest != null) {
             // Set the text of the selected text field to the selected info for the guest
             assert selectedInfoToEdit != null;
+
             selectedTF.setText(fromInfoToValue(selectedInfoToEdit));
         }
+    }
+
+    private String fromInfoToValue(String selectedInfoToEdit) {
+        String text;
+        switch (selectedInfoToEdit) {
+            case "Name":
+                text = guest.name();
+                break;
+            case "Phone":
+                text = guest.phone();
+                break;
+            case "email":
+                text = guest.email();
+                break;
+            default:
+                text = selectedInfoToEdit;
+                break;
+        }
+        return text;
     }
 
     public void selectedNewUserClicked() {
@@ -79,18 +99,6 @@ public class GuestsView implements Initializable {
             selectedTF.setText(fromInfoToValue(selectedInfoToEdit));
         }
     }
-
-    private String fromInfoToValue(String selectedInfoToEdit) {
-        String text;
-        switch (selectedInfoToEdit) {
-            case "Name" -> text = guest.name();
-            case "Phone" -> text = guest.phone();
-            case "email" -> text = guest.email();
-            default -> text = selectedInfoToEdit;
-        }
-        return text;
-    }
-
 
     public void onSaveClicked() throws SQLException, ClassNotFoundException {
         String databasePar = selectedInfoToEdit;

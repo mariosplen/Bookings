@@ -1,45 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-
-<AnchorPane prefHeight="768" prefWidth="1366" styleClass="mainView" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mariosplen.bookings.controllers.MainView">
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="768" prefWidth="1366" styleClass="mainView"
+            xmlns="http://javafx.com/javafx" fx:controller="com.github.mariosplen.bookings.controllers.MainView">
 
     <stylesheets>
-        <URL value="@../fonts/AtomicAge/atomic_age.css" />
-        <URL value="@../bookings.css" />
+        <URL value="@../fonts/AtomicAge/atomic_age.css"/>
+        <URL value="@../bookings.css"/>
     </stylesheets>
 
-    <Text boundsType="VISUAL" fill="WHITE" styleClass="hotelinoTitle" text="HOTELINO" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="75.0">
+    <Text boundsType="VISUAL" fill="WHITE" styleClass="hotelinoTitle" text="HOTELINO" AnchorPane.leftAnchor="45.0"
+          AnchorPane.topAnchor="75.0">
         <effect>
             <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
                 <color>
-                    <Color opacity="0.2" />
+                    <Color opacity="0.2"/>
                 </color>
             </DropShadow>
         </effect>
     </Text>
-    <HBox fx:id="mainViewUsernameHBox" alignment="CENTER" layoutX="989.0" layoutY="92.0" spacing="20.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="92.0">
+    <HBox fx:id="mainViewUsernameHBox" alignment="CENTER" layoutX="989.0" layoutY="92.0" spacing="20.0"
+          AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="92.0">
         <ImageView fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../media/icons/profile-circle.png" />
+            <Image url="@../media/icons/profile-circle.png"/>
         </ImageView>
-        <Text fx:id="mainViewUsername" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="mainViewUsername" text="USERNAME" />
+        <Text fx:id="mainViewUsername" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="mainViewUsername"
+              text="USERNAME"/>
     </HBox>
-   <BorderPane fx:id="contentPane" styleClass="contentPane" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="160.0">
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-   </BorderPane>
-    <Button fx:id="backBtn" cancelButton="true"  styleClass="backButton" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="160.0">
+    <BorderPane fx:id="contentPane" styleClass="contentPane" AnchorPane.bottomAnchor="60.0"
+                AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="160.0">
+        <opaqueInsets>
+            <Insets/>
+        </opaqueInsets>
+    </BorderPane>
+    <Button fx:id="backBtn" cancelButton="true" styleClass="backButton" AnchorPane.leftAnchor="120.0"
+            AnchorPane.topAnchor="160.0">
         <graphic>
-            <ImageView  fitHeight="75.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@../media/icons/back.png" />
+            <ImageView fitHeight="75.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../media/icons/back.png"/>
             </ImageView>
         </graphic>
     </Button>

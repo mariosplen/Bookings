@@ -1,87 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.*?>
-
-<VBox alignment="CENTER" prefHeight="768.0" prefWidth="1366.0" styleClass="mainView" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mariosplen.bookings.controllers.recovery.RecoverView">
+<?import java.net.URL?>
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" prefHeight="768.0" prefWidth="1366.0" styleClass="mainView"
+      xmlns="http://javafx.com/javafx" fx:controller="com.github.mariosplen.bookings.controllers.recovery.RecoverView">
     <stylesheets>
-        <URL value="@../../fonts/AtomicAge/atomic_age.css" />
-        <URL value="@../../bookings.css" />
+        <URL value="@../../fonts/AtomicAge/atomic_age.css"/>
+        <URL value="@../../bookings.css"/>
     </stylesheets>
 
     <StackPane>
-        <Text boundsType="VISUAL" fill="WHITE" opacity="0.15" styleClass="hotelinoTitle" text="HOTELINO" StackPane.alignment="CENTER">
+        <Text boundsType="VISUAL" fill="WHITE" opacity="0.15" styleClass="hotelinoTitle" text="HOTELINO"
+              StackPane.alignment="CENTER">
             <effect>
                 <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
                     <color>
-                        <Color opacity="0.2" />
+                        <Color opacity="0.2"/>
                     </color>
                 </DropShadow>
             </effect>
             <StackPane.margin>
-                <Insets top="100.0" />
+                <Insets top="100.0"/>
             </StackPane.margin>
         </Text>
-        <Text boundsType="VISUAL" fill="WHITE" layoutX="457.0" layoutY="81.0" opacity="0.2" styleClass="hotelinoTitle" text="HOTELINO">
+        <Text boundsType="VISUAL" fill="WHITE" layoutX="457.0" layoutY="81.0" opacity="0.2" styleClass="hotelinoTitle"
+              text="HOTELINO">
             <effect>
                 <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
                     <color>
-                        <Color opacity="0.2" />
+                        <Color opacity="0.2"/>
                     </color>
                 </DropShadow>
             </effect>
             <StackPane.margin>
-                <Insets top="50.0" />
+                <Insets top="50.0"/>
             </StackPane.margin>
         </Text>
-        <Text boundsType="VISUAL" fill="WHITE" layoutX="457.0" layoutY="81.0" styleClass="hotelinoTitle" text="HOTELINO">
+        <Text boundsType="VISUAL" fill="WHITE" layoutX="457.0" layoutY="81.0" styleClass="hotelinoTitle"
+              text="HOTELINO">
             <effect>
                 <DropShadow height="5.32" offsetY="2.0" radius="2.1" spread="0.75" width="5.0">
                     <color>
-                        <Color opacity="0.2" />
+                        <Color opacity="0.2"/>
                     </color>
                 </DropShadow>
             </effect>
         </Text>
     </StackPane>
-    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="422.0" prefWidth="499.0" styleClass="contentPane">
+    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="422.0" prefWidth="499.0"
+          styleClass="contentPane">
         <HBox>
             <Button onAction="#onBackButtonClicked" styleClass="backButton">
                 <graphic>
                     <ImageView fitHeight="37.0" fitWidth="39.0" preserveRatio="true">
-                        <Image url="@../../media/icons/back.png" />
+                        <Image url="@../../media/icons/back.png"/>
                     </ImageView>
                 </graphic>
             </Button>
         </HBox>
         <VBox alignment="CENTER" spacing="7.0">
             <VBox.margin>
-                <Insets left="64.0" right="64.0" />
+                <Insets left="64.0" right="64.0"/>
             </VBox.margin>
-            <Text styleClass="header" text="Password Recovery" />
+            <Text styleClass="header" text="Password Recovery"/>
             <HBox>
                 <Text boundsType="VISUAL" styleClass="mediumText" text="Username" textOrigin="TOP"/>
             </HBox>
-            <TextField fx:id="usernameTF" prefHeight="64.0" styleClass="basicTF" />
+            <TextField fx:id="usernameTF" prefHeight="64.0" styleClass="basicTF"/>
             <HBox>
                 <Text boundsType="VISUAL" styleClass="mediumText" text="Secret Hotel Key" textOrigin="TOP"/>
             </HBox>
-            <PasswordField fx:id="hotelKey" prefHeight="64.0" styleClass="basicTF" />
-            <Label fx:id="errorMsg" styleClass="errorText" text="Wrong username or password" visible="false" />
-            <Button maxWidth="1.7976931348623157E308" onAction="#onShowBtnClicked" prefHeight="64.0" prefWidth="408.0" styleClass="bigBtn" text="Reveal" />
-            <Text fx:id="showPasswordTxt" boundsType="VISUAL" styleClass="smallText" text="Password:" textOrigin="TOP" visible="false" />
+            <PasswordField fx:id="hotelKey" prefHeight="64.0" styleClass="basicTF"/>
+            <Label fx:id="errorMsg" styleClass="errorText" text="Wrong username or password" visible="false"/>
+            <Button maxWidth="1.7976931348623157E308" onAction="#onShowBtnClicked" prefHeight="64.0" prefWidth="408.0"
+                    styleClass="bigBtn" text="Reveal"/>
+            <Text fx:id="showPasswordTxt" boundsType="VISUAL" styleClass="smallText" text="Password:" textOrigin="TOP"
+                  visible="false"/>
         </VBox>
-      <VBox.margin>
-         <Insets />
-      </VBox.margin>
-      <padding>
-         <Insets bottom="9.0" />
-      </padding>
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <padding>
+            <Insets bottom="9.0"/>
+        </padding>
     </VBox>
 </VBox>

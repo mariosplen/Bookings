@@ -12,13 +12,13 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginView {
+
     @FXML
     private PasswordField passwordTF;
     @FXML
     private TextField usernameTF;
     @FXML
     private Text errorMsg;
-
 
     @FXML
     private void onLoginBtnClicked() throws SQLException, ClassNotFoundException, IOException {
@@ -34,7 +34,6 @@ public class LoginView {
         Nav.user = user;
         Nav.toHome();
 
-
     }
 
     @FXML
@@ -42,11 +41,9 @@ public class LoginView {
         Nav.toRecovery();
     }
 
-
     @FXML
     private void onRegisterHLClicked() throws IOException {
         Nav.toRegister();
     }
-
 
 }

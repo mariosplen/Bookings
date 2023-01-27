@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.models;
 
-
 import com.github.mariosplen.bookings.util.DBManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +20,6 @@ public class RoomDAO {
         return rooms;
     }
 
-
     public static Room getRoomFromRs(ResultSet rs) throws SQLException {
         return new Room(
                 rs.getInt("id"),
@@ -39,18 +37,7 @@ public class RoomDAO {
 
     public static List<Room> getAvailableForDate(LocalDate checkIn, LocalDate checkOut, String cat) throws SQLException, ClassNotFoundException {
 
-
-        String query = """
-                SELECT * FROM rooms r
-                WHERE r.category = ?
-                  AND r.id NOT IN (
-                    SELECT b.room_id FROM books b
-                    WHERE (b.check_in <= ? AND b.check_out >= ? )
-                       OR (b.check_in <= ? AND b.check_out >= ? )
-                       OR (b.check_in >= ? AND b.check_out <= ? )
-                )
-                """;
-
+        String query = " SELECT * FROM rooms r WHERE r.category = ? AND r.id NOT IN ( SELECT b.room_id FROM books b WHERE (b.check_in <= ? AND b.check_out >= ? ) OR (b.check_in <= ? AND b.check_out >= ? ) OR (b.check_in >= ? AND b.check_out <= ? ) ) ";
 
         ResultSet rs = DBManager.dbExecuteQuery(query,
                 cat,

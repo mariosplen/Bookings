@@ -5,6 +5,7 @@ import javax.sql.rowset.RowSetProvider;
 import java.sql.*;
 
 public class DBManager {
+
     private static final String JDBC_DRIVER = "org.sqlite.JDBC";
     private static final String connStr = "jdbc:sqlite:assets/database/bookings.db";
     private static Connection conn = null;
@@ -44,7 +45,6 @@ public class DBManager {
         dbDisconnect();
         return crs;
     }
-
 
     public static void dbExecuteUpdate(
             String query, Object... varArgs

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SettingsDAO {
+
     public static String getHotelKey() throws SQLException, ClassNotFoundException {
         String query = "SELECT value FROM settings WHERE name = 'hotel_key'";
         ResultSet rs = DBManager.dbExecuteQuery(query);

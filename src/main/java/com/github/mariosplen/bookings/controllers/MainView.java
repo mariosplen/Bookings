@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.controllers;
 
-
 import com.github.mariosplen.bookings.models.User;
 import com.github.mariosplen.bookings.util.Nav;
 import javafx.application.Platform;
@@ -17,20 +16,18 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainView implements Initializable {
+
     private final User user;
     public HBox mainViewUsernameHBox;
     public Text mainViewUsername;
     public BorderPane contentPane;
 
-
     @FXML
     private Button backBtn;
-
 
     public MainView(User user, Node content) {
         this.user = user;
         Platform.runLater(() -> contentPane.setCenter(content));
-
 
     }
 
@@ -62,6 +59,5 @@ public class MainView implements Initializable {
             });
         }
     }
-
 
 }

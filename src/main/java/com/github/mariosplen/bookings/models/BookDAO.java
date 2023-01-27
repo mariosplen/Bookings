@@ -23,8 +23,10 @@ public class BookDAO {
         while (rs.next()) {
             LocalDate from = LocalDate.parse(rs.getString("check_in"));
             LocalDate to = LocalDate.parse(rs.getString("check_out"));
-            List<LocalDate> dates = new ArrayList<>(from.datesUntil(to).toList());
-            dates.add(to);
+            List<LocalDate> dates = new ArrayList<>();
+            for (LocalDate date = from; !date.isAfter(to); date = date.plusDays(1)) {
+                dates.add(date);
+            }
 
 
             if (roomBookDates.containsKey(rs.getInt("room_id"))) {
@@ -39,7 +41,6 @@ public class BookDAO {
         return roomBookDates;
     }
 
-
     public static void addBook(
             int roomId,
             String roomCategory,
@@ -49,10 +50,7 @@ public class BookDAO {
             LocalDate date,
             int totalPrice
     ) throws SQLException, ClassNotFoundException {
-        String query = """
-                INSERT INTO books(room_id, room_category, guest_name, check_in, check_out,  date, total_price)
-                VALUES(?, ?, ?, ?, ?, ?, ?)
-                """;
+        String query = " INSERT INTO books(room_id, room_category, guest_name, check_in, check_out,  date, total_price) VALUES(?, ?, ?, ?, ?, ?, ?) ";
         DBManager.dbExecuteUpdate(query,
                 roomId,
                 roomCategory,
@@ -102,4 +100,3 @@ public class BookDAO {
 
     }
 }
-

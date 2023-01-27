@@ -1,8 +1,8 @@
 package com.github.mariosplen.bookings.util;
 
 public class Views {
-    public static final String MAIN = "/com/github/mariosplen/bookings/fxml/main-view.fxml";
 
+    public static final String MAIN = "/com/github/mariosplen/bookings/fxml/main-view.fxml";
 
     public static final String BOOKS = "/com/github/mariosplen/bookings/fxml/books/books-view.fxml";
     public static final String CALENDAR = "/com/github/mariosplen/bookings/fxml/calendar/calendar-view.fxml";
@@ -18,5 +18,3 @@ public class Views {
     public static final String NEW_GUEST = "/com/github/mariosplen/bookings/fxml/new-guest/new-guest-view.fxml";
     public static final String RESERVATION_DETAILS = "/com/github/mariosplen/bookings/fxml/reservation/reservation-details-view.fxml";
 }
-
-

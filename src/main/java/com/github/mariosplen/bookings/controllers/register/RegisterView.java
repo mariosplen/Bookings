@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegisterView {
+
     @FXML
     private Text errorMsg;
     @FXML
@@ -27,7 +28,6 @@ public class RegisterView {
     @FXML
     private CheckBox basicCB;
 
-
     @FXML
     private void onRegisterBtnClicked() throws IOException, SQLException, ClassNotFoundException {
 
@@ -35,7 +35,7 @@ public class RegisterView {
 
         // Check if username, password, and hotel key are not blank
         // Check if hotel key is correct
-        if (usernameTF.getText().isBlank() || passwordTF.getText().isBlank() || !hotelKeyTF.getText().equals(SettingsDAO.getHotelKey())) {
+        if (usernameTF.getText().trim().isEmpty() || passwordTF.getText().trim().isEmpty() || !hotelKeyTF.getText().equals(SettingsDAO.getHotelKey())) {
             errorMsg.setText("Please enter a username, password, and hotel key (ask the owner for the hotel key)");
             errorMsg.setVisible(true);
             return;

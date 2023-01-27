@@ -9,7 +9,6 @@ import java.sql.SQLException;
 
 public class UserDAO {
 
-
     public static ObservableList<User> getUsers() throws SQLException, ClassNotFoundException {
         String query = "SELECT * FROM users";
         ResultSet rs = DBManager.dbExecuteQuery(query);
@@ -63,10 +62,7 @@ public class UserDAO {
             Boolean canManageGuests,
             Boolean canManageUsers
     ) throws SQLException, ClassNotFoundException {
-        String query = """
-                INSERT INTO users(username, password, basic_functions,  manage_guests, manage_users)
-                VALUES(?,?,?,?,?)
-                """;
+        String query = " INSERT INTO users(username, password, basic_functions,  manage_guests, manage_users) VALUES(?,?,?,?,?) ";
         DBManager.dbExecuteUpdate(query,
                 username,
                 password,
@@ -84,7 +80,7 @@ public class UserDAO {
 
     public static void switchPerm(String username, String perm) throws SQLException, ClassNotFoundException {
 
-        String query = "UPDATE `users` SET %s = (( %s | 1) - (  %s & 1)) WHERE username = ? ".formatted(perm, perm, perm);
+        String query = String.format("UPDATE `users` SET %s = (( %s | 1) - (  %s & 1)) WHERE username = ?", perm, perm, perm);
 
         DBManager.dbExecuteUpdate(query, username);
     }

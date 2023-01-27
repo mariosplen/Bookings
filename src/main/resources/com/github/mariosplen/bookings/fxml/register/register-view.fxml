@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import java.net.URL?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="548.0" prefWidth="1126.0" AnchorPane.bottomAnchor="0.0"
+<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="548.0" prefWidth="1126.0" AnchorPane.bottomAnchor="0.0"
             AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0"
-            xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns="http://javafx.com/javafx"
             fx:controller="com.github.mariosplen.bookings.controllers.register.RegisterView">
     <HBox alignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
         <Text boundsType="VISUAL" fill="BLACK" styleClass="header" text="Sign-Up">

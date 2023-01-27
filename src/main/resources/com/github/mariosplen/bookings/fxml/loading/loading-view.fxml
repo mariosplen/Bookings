@@ -7,9 +7,10 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
-<StackPane xmlns:fx="http://javafx.com/fxml/1" BorderPane.alignment="CENTER" prefHeight="768" prefWidth="1366"
+<StackPane xmlns:fx="http://javafx.com/fxml" BorderPane.alignment="CENTER" prefHeight="768" prefWidth="1366"
            styleClass="mainView"
-           xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.github.mariosplen.bookings.controllers.loading.LoadingView">
+           xmlns="http://javafx.com/javafx"
+           fx:controller="com.github.mariosplen.bookings.controllers.loading.LoadingView">
     <MediaView fx:id="intro" fitHeight="768.0" fitWidth="1366.0"/>
     <Text fx:id="shadow2" boundsType="VISUAL" fill="WHITE" opacity="0.15" styleClass="hotelinoTitle" text="HOTELINO"
           translateY="-261.0" visible="false" StackPane.alignment="CENTER">

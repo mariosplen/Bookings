@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.util;
 
-
 import com.github.mariosplen.bookings.controllers.MainView;
 import com.github.mariosplen.bookings.controllers.reservation.ReservationDetailsView;
 import com.github.mariosplen.bookings.models.Book;
@@ -18,10 +17,11 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 public class Nav {
-    private static Stage stage;
+
     public static BorderPane content;
     public static Button backBtn;
     public static User user;
+    private static Stage stage;
 
     public static void toLoading(Stage stage) throws IOException {
         Nav.stage = stage;
@@ -60,7 +60,6 @@ public class Nav {
         fxmlLoader.setControllerFactory(aClass -> new MainView(null, content));
         stage.setScene(new Scene(fxmlLoader.load()));
 
-
     }
 
     public static void toRecovery() throws IOException {
@@ -82,10 +81,9 @@ public class Nav {
             }
         });
 
-
         stage.setScene(new Scene(loader.load()));
         MainView mainViewController = loader.getController();
-        backBtn =  mainViewController.getBackBtn();
+        backBtn = mainViewController.getBackBtn();
         backBtn.setVisible(false);
         Nav.content = mainViewController.contentPane;
     }
@@ -95,7 +93,6 @@ public class Nav {
         content.setCenter(contentLoader.load());
         backBtn.setVisible(true);
     }
-
 
     public static void toNewGuest() throws IOException {
         FXMLLoader contentLoader = new FXMLLoader(Nav.class.getResource(Views.NEW_GUEST));
@@ -134,13 +131,10 @@ public class Nav {
         backBtn.setVisible(true);
     }
 
-
     public static void toBooks() throws IOException {
         FXMLLoader loader = new FXMLLoader(Nav.class.getResource(Views.BOOKS));
         content.setCenter(loader.load());
         backBtn.setVisible(true);
     }
-
-
 
 }

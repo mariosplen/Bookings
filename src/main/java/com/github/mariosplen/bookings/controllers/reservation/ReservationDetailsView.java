@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.controllers.reservation;
 
-
 import com.github.mariosplen.bookings.models.Book;
 import com.github.mariosplen.bookings.models.BookDAO;
 import com.github.mariosplen.bookings.models.Guest;
@@ -12,10 +11,10 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.controlsfx.control.SearchableComboBox;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,6 +23,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ReservationDetailsView {
+
     private final int numberOfNights;
     private final int roomId;
     private final LocalDate checkInDate;
@@ -34,9 +34,8 @@ public class ReservationDetailsView {
     private TextField doorPrice;
 
     @FXML
-    private SearchableComboBox<String> usersSearchBox;
+    private ComboBox<String> usersSearchBox;
     private int totalPrice;
-
 
     public ReservationDetailsView(Book tempBook) throws SQLException, ClassNotFoundException {
         roomId = tempBook.roomId();
@@ -44,7 +43,6 @@ public class ReservationDetailsView {
         checkOutDate = tempBook.checkOut();
 
         numberOfNights = checkInDate.until(checkOutDate).getDays();
-
 
         Platform.runLater(() -> {
 
@@ -58,7 +56,6 @@ public class ReservationDetailsView {
             roomIDText.setText("room ID: " + roomId);
 
             categoryText.setText(tempBook.roomCategory());
-
 
         });
     }
@@ -76,7 +73,6 @@ public class ReservationDetailsView {
         );
     }
 
-
     public void onAddGuestBtnClicked() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.NEW_GUEST));
         Stage popUpStage = new Stage();
@@ -93,10 +89,9 @@ public class ReservationDetailsView {
         });
     }
 
-
     public void onSubmitClicked() throws IOException, SQLException, ClassNotFoundException {
         errorMsg.setVisible(false);
-        if (usersSearchBox.getValue() == null || totalPrice == 0) {
+        if (usersSearchBox.getValue() == null || totalPrice == 0 || totalPrice < 0) {
             errorMsg.setText("Please enter correct parameters!");
             errorMsg.setVisible(true);
             return;
@@ -115,7 +110,3 @@ public class ReservationDetailsView {
         Nav.toHome();
     }
 }
-
-
-
-

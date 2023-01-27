@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.controllers.home;
 
-
 import com.github.mariosplen.bookings.util.Nav;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,15 +10,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 public class HomeView implements Initializable {
-
 
     @FXML
     private Button newGuestBtn, calendarBtn, guestsButton, usersButton, checkInBtn, booksBtn;
     @FXML
     private HBox logoutButton;
-
 
     public void refresh() {
         if (Nav.user.canManageGuests()) {
@@ -35,7 +31,6 @@ public class HomeView implements Initializable {
             booksBtn.setDisable(false);
         }
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

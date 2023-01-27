@@ -24,7 +24,6 @@ public class RecoverView {
     @FXML
     private TextField usernameTF;
 
-
     public void onBackButtonClicked() throws IOException {
         Nav.toLogin();
     }

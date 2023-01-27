@@ -22,14 +22,15 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class UserItem implements Initializable {
+
     public Rectangle basicPerm;
     public Rectangle manageGuests;
     public Rectangle manageUsers;
@@ -38,12 +39,9 @@ public class UserItem implements Initializable {
     public void onChangePassBtnClicked(ActionEvent actionEvent) {
 
         // Finds current username by going backwards to the node tree
-        String username = (
-                ((Text)
-                        ((Button) actionEvent.getSource())
-                                .getParent().getChildrenUnmodifiable().get(3))
-                        .getText()
-        );
+        String username = (((Text) ((Button) actionEvent.getSource())
+                .getParent().getChildrenUnmodifiable().get(3))
+                .getText());
 
         BorderPane borderPane = new BorderPane();
         Scene scene = new Scene(borderPane);
@@ -52,19 +50,10 @@ public class UserItem implements Initializable {
         stage.setTitle("Change Password of User: " + username);
         Label enterPass = new Label("Enter new Password");
         PasswordField passwordField = new PasswordField();
-        passwordField.setStyle("-fx-background-color: #C6B3EF;\n" +
-                "    -fx-background-radius: 3;");
+        passwordField.setStyle("-fx-background-color: #C6B3EF;\n"
+                + "    -fx-background-radius: 3;");
         Button save = new Button("Save");
-        save.setStyle("""
-                -fx-background-color: #5100FC;
-                    -fx-text-fill: #FFFFFF;
-                    -fx-background-radius: 6;
-                    -fx-font-size: 20;
-                    -fx-font-weight: bold;
-                    -fx-border-radius: 6;
-                    -fx-border-color: #000000;
-                    -fx-border-width: 1;
-                    -fx-padding: 14;""");
+        save.setStyle(" -fx-background-color: #5100FC; -fx-text-fill: #FFFFFF; -fx-background-radius: 6; -fx-font-size: 20; -fx-font-weight: bold; -fx-border-radius: 6; -fx-border-color: #000000; -fx-border-width: 1; -fx-padding: 14;");
         enterPass.setStyle("-fx-font-size: 32; -fx-font-weight: bold;");
         VBox vBox = new VBox(enterPass, passwordField, save);
         vBox.setSpacing(20);
@@ -86,24 +75,21 @@ public class UserItem implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Tooltip basic = new Tooltip("Basic Functionality");
-        basic.setShowDelay(Duration.ZERO);
+
         Tooltip.install(basicPerm, basic);
         Tooltip guestsManage = new Tooltip("Edit Guests");
-        guestsManage.setShowDelay(Duration.ZERO);
+
         Tooltip.install(manageGuests, guestsManage);
         Tooltip usersManage = new Tooltip("Edit Users");
-        usersManage.setShowDelay(Duration.ZERO);
+
         Tooltip.install(manageUsers, usersManage);
 
     }
 
     public void onDeleteBtnClicked(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        String username = (
-                ((Text)
-                        ((Button) actionEvent.getSource())
-                                .getParent().getChildrenUnmodifiable().get(3))
-                        .getText()
-        );
+        String username = (((Text) ((Button) actionEvent.getSource())
+                .getParent().getChildrenUnmodifiable().get(3))
+                .getText());
         UserDAO.deleteUser(username);
         refreshView();
 
@@ -111,9 +97,11 @@ public class UserItem implements Initializable {
 
     private void refreshView() throws SQLException, ClassNotFoundException {
         // Refresh mainPane by re-creating loader
-        Window.getWindows().forEach(window -> {
+
+        Iterator<Window> windows = Stage.impl_getWindows();
+        while (windows.hasNext()) {
+            Window window = windows.next();
             Parent p = window.getScene().getRoot();
-            // if it has mainPane that means that it's the main Screen
             if (p.lookup("#contentPane") != null) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.USERS));
                 try {
@@ -122,8 +110,7 @@ public class UserItem implements Initializable {
                     throw new RuntimeException(e);
                 }
             }
-        });
-
+        }
         Nav.user = UserDAO.login(Nav.user.username(), Nav.user.password());
     }
 
@@ -139,7 +126,6 @@ public class UserItem implements Initializable {
         UserDAO.switchPerm(username, "manage_guests");
         refreshView();
     }
-
 
     public void onPermBasicClicked(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
         String username = handleRectangleClick(mouseEvent);

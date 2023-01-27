@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.controllers.calendar;
 
-
 import com.github.mariosplen.bookings.models.BookDAO;
 import com.github.mariosplen.bookings.models.Room;
 import com.github.mariosplen.bookings.models.RoomDAO;
@@ -9,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
@@ -16,12 +16,15 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.YearMonth;
-import java.util.ArrayList;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CalendarView implements Initializable {
+
     Map<Integer, List<LocalDate>> roomBookDates;
     @FXML
     private GridPane gridPane;
@@ -46,7 +49,6 @@ public class CalendarView implements Initializable {
         fromDP.setValue(YearMonth.now().atDay(1));
         toDP.setValue(YearMonth.now().atEndOfMonth());
 
-
         setCalendarData();
 
     }
@@ -61,7 +63,9 @@ public class CalendarView implements Initializable {
         LocalDate toDate = toDP.getValue();
 
         // Get a list of all the dates between the start and end dates
-        List<LocalDate> allDates = new ArrayList<>(fromDate.datesUntil(toDate).toList());
+        List<LocalDate> allDates = Stream.iterate(fromDate, date -> date.plusDays(1))
+                .limit(ChronoUnit.DAYS.between(fromDate, toDate) + 1)
+                .collect(Collectors.toList());
 
         // Set the calendar tag
         Label roomTag = new Label("Room");
@@ -78,7 +82,6 @@ public class CalendarView implements Initializable {
             gridPane.addRow(i + 1, centered);
         }
 
-
         // Set the dates in the calendar grid
         for (int i = 0; i < allDates.size(); i++) {
             Label dateText = new Label(allDates.get(i).toString());
@@ -88,7 +91,6 @@ public class CalendarView implements Initializable {
             centered.setCenter(dateText);
             gridPane.addColumn(i + 1, centered);
         }
-
 
         // Get a map of room bookings, with the room id as the key and a list of booked dates as the value
         try {
@@ -107,14 +109,36 @@ public class CalendarView implements Initializable {
             }
         }
 
+        roomBookDates.forEach((integer, localDates) -> {
+            for (int i = 0; i < rooms.size(); i++) {
+                if (String.valueOf(rooms.get(i).id()).equals(String.valueOf(integer))) {
+                    for (LocalDate date : localDates) {
+                        for (int j = 0; j < allDates.size(); j++) {
+                            if (allDates.get(j).equals(date)) {
+                                int finalI = i;
+                                int finalJ = j;
+                                gridPane.getChildren().forEach(node -> {
+                                    if (GridPane.getColumnIndex(node) == (finalJ + 1) && GridPane.getRowIndex(node) == (finalI + 1)) {
+                                        Tooltip.install(node, new Tooltip("Book_id = " + integer));
+                                        ((BorderPane) node).getCenter().setDisable(true);
+                                    }
+                                });
+                            }
+                        }
+
+                    }
+                }
+            }
+
+        });
     }
 
     public void onNextMonthClk() {
         LocalDate initial = fromDate.plusMonths(1);
 
         LocalDate nextStartOfMonth = initial.withDayOfMonth(1);
-        LocalDate nextEndOfMonth =
-                initial.withDayOfMonth(initial.getMonth().length(initial.isLeapYear()));
+        LocalDate nextEndOfMonth
+                = initial.withDayOfMonth(initial.getMonth().length(initial.isLeapYear()));
 
         fromDP.setValue(nextStartOfMonth);
         toDP.setValue(nextEndOfMonth);
@@ -126,8 +150,8 @@ public class CalendarView implements Initializable {
         LocalDate initial = fromDate.minusMonths(1);
 
         LocalDate prevStartOfMonth = initial.withDayOfMonth(1);
-        LocalDate prevEndOfMonth =
-                initial.withDayOfMonth(initial.getMonth().length(initial.isLeapYear()));
+        LocalDate prevEndOfMonth
+                = initial.withDayOfMonth(initial.getMonth().length(initial.isLeapYear()));
 
         fromDP.setValue(prevStartOfMonth);
         toDP.setValue(prevEndOfMonth);

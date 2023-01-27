@@ -5,8 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" stylesheets="@../../bookings.css"
-      xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.github.mariosplen.bookings.controllers.reservation.ReservationView">
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" stylesheets="@../../bookings.css"
+      xmlns="http://javafx.com/javafx"
+      fx:controller="com.github.mariosplen.bookings.controllers.reservation.ReservationView">
     <Text styleClass="mediumText" text="Room Category"/>
     <ChoiceBox fx:id="categoryChoiceBox" prefHeight="64.0" prefWidth="270.0"/>
     <Region prefHeight="25.0" prefWidth="613.0"/>

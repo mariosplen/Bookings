@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.controllers.users;
 
-
 import com.github.mariosplen.bookings.models.UserDAO;
 import com.github.mariosplen.bookings.util.Views;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class UsersView implements Initializable {
+
     public VBox usersVBox;
 
     @Override

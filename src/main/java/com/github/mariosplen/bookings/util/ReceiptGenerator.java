@@ -16,8 +16,6 @@ import java.util.Locale;
 
 public class ReceiptGenerator {
 
-
-
     public void genReceipt(
             String name, LocalDate dateOfArrivalLD, LocalDate dateOfDepartureLD, int total
     ) throws IOException {
@@ -26,11 +24,9 @@ public class ReceiptGenerator {
         String dateOfDeparture = dateOfDepartureLD.format(DateTimeFormatter.ofPattern("EEEE, MMM dd yyyy").withLocale(Locale.ENGLISH));
         int days = dateOfArrivalLD.until(dateOfDepartureLD).getDays();
 
-
         PDDocument document = new PDDocument();
         PDPage page = new PDPage();
         document.addPage(page);
-
 
         //first page
         PDPage page1 = document.getPage(0);
@@ -52,14 +48,12 @@ public class ReceiptGenerator {
         cs.showText("Invoice");
         cs.endText();
 
-
         java.util.Date date = new java.util.Date();
         cs.beginText();
         cs.setFont(PDType1Font.TIMES_ROMAN, 14);
         cs.newLineAtOffset(400, 675);
         cs.showText("" + date);
         cs.endText();
-
 
         // Predetermined text
         cs.beginText();
@@ -94,10 +88,7 @@ public class ReceiptGenerator {
         cs.setNonStrokingColor(0, 0, 0);
         cs.endText();
 
-
         // Dynamic data
-
-
         cs.beginText();
         cs.setFont(PDType1Font.TIMES_ROMAN, 14);
         cs.newLineAtOffset(250, 590);
@@ -130,9 +121,7 @@ public class ReceiptGenerator {
         cs.setNonStrokingColor(0, 0, 0);
         cs.endText();
 
-
         cs.close();
-
 
         // Save the pdf
         FileChooser fileChooser = new FileChooser();
@@ -142,7 +131,6 @@ public class ReceiptGenerator {
         File dir = fileChooser.showSaveDialog(Nav.content.getScene().getWindow());
         String directory = dir + String.valueOf(LocalDateTime.now().toEpochSecond(ZoneOffset.UTC)) + ".pdf";
         document.save(directory);
-
 
     }
 }

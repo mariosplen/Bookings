@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.controllers.reservation;
 
-
 import com.github.mariosplen.bookings.models.Book;
 import com.github.mariosplen.bookings.models.Room;
 import com.github.mariosplen.bookings.models.RoomDAO;
@@ -17,6 +16,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ReservationView implements Initializable {
+
     public ChoiceBox<String> categoryChoiceBox;
     @FXML
     private Label errorLabel;
@@ -27,7 +27,6 @@ public class ReservationView implements Initializable {
     private Book tempBook;
 
     private List<Room> availableRooms;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -45,7 +44,6 @@ public class ReservationView implements Initializable {
         // Populate the categoryChoiceBox with category names from the database
         fillCategoryChoiceBox();
     }
-
 
     public void checkAvailabilityClicked() throws SQLException, ClassNotFoundException {
         if (availableRooms != null) {
@@ -96,7 +94,6 @@ public class ReservationView implements Initializable {
                     0
             );
 
-
             continueButton.setVisible(true);
         } else {
             // If no rooms are available, show an error message
@@ -104,7 +101,6 @@ public class ReservationView implements Initializable {
             errorLabel.setText("No rooms found!");
         }
     }
-
 
     private void fillCategoryChoiceBox() {
         categoryChoiceBox.getItems().addAll(

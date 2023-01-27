@@ -17,4 +17,3 @@ public class Bookings extends Application {
         Nav.toLoading(stage);
     }
 }
-

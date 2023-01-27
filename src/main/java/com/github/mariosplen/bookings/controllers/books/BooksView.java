@@ -1,6 +1,5 @@
 package com.github.mariosplen.bookings.controllers.books;
 
-
 import com.github.mariosplen.bookings.models.Book;
 import com.github.mariosplen.bookings.models.BookDAO;
 import com.github.mariosplen.bookings.util.ReceiptGenerator;
@@ -22,33 +21,28 @@ import java.util.ResourceBundle;
 
 public class BooksView implements Initializable {
 
-
     @FXML
     ObservableList<Book> books;
     @FXML
     private TableView<Book> bookTableView;
     @FXML
-    private TableColumn<Book, Button>
-            saveButtonColumn,
+    private TableColumn<Book, Button> saveButtonColumn,
             deleteButtonColumn;
     @FXML
-    private TableColumn<Book, Number>
-            room_id,
+    private TableColumn<Book, Number> room_id,
             nights,
             price;
     @FXML
-    private TableColumn<Book, String>
-            check_in,
+    private TableColumn<Book, String> check_in,
             check_out,
             guest_name,
             room_category,
             date;
 
-
     private void tableViewValues() throws SQLException, ClassNotFoundException {
         ObservableList<Book> roomObservableList = BookDAO.getBooks();
         saveButtonColumn.setCellValueFactory(param -> new SimpleObjectProperty<>(new Button("Save")));
-        saveButtonColumn.setCellFactory(param -> new TableCell<>() {
+        saveButtonColumn.setCellFactory(param -> new TableCell<Book, Button>() {
             final Button button = new Button("Save");
 
             @Override
@@ -76,9 +70,9 @@ public class BooksView implements Initializable {
                 }
             }
         });
-        deleteButtonColumn.setCellFactory(param -> new TableCell<>() {
-            final Button button = new Button("Delete");
 
+        deleteButtonColumn.setCellFactory(param -> new TableCell<Book, Button>() {
+            final Button button = new Button("Delete");
 
             @Override
             protected void updateItem(Button item, boolean empty) {
@@ -90,10 +84,7 @@ public class BooksView implements Initializable {
                     button.setOnAction(event -> {
                         Book book = getTableView().getItems().get(getIndex());
                         try {
-
-                            // Delete the book from the database using the BookDAO class
                             BookDAO.deleteBook(book.id());
-                            // Remove the book from the table's data
                             books.remove(book);
                         } catch (SQLException | ClassNotFoundException e) {
                             throw new RuntimeException(e);
@@ -120,7 +111,6 @@ public class BooksView implements Initializable {
 
         bookTableView.setItems(roomObservableList);
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
