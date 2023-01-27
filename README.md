@@ -67,7 +67,7 @@ Overall, the Bookings App is a powerful and user-friendly tool that streamlines 
   - Role: Full Stack Developer
   - Contact: mariosplenchidis@gmail.com
   - [LinkedIn](https://www.linkedin.com/in/marios-p-12313a203/)
-- **UI design by:** Sar Di on
+- **UI design by:** Sardion Ntatidis
   - Role: UI Designer
-  - Contact: ntatidisardion@gmail.com
+  - Contact: ntatidissardion@gmail.com
   - [LinkedIn](https://www.linkedin.com/in/sardion-ntatidis-b00a26259)
