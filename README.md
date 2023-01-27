@@ -71,3 +71,9 @@ Overall, the Bookings App is a powerful and user-friendly tool that streamlines 
   - Role: UI Designer
   - Contact: ntatidissardion@gmail.com
   - [LinkedIn](https://www.linkedin.com/in/sardion-ntatidis-b00a26259)
+- **PDF invoice by:** Athanasios Pazos
+  - Role: Created the invoice
+
+
+## Acknowledgements
+- Thanks to miesina for the intro.
