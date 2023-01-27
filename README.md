@@ -4,6 +4,10 @@ The Bookings App is a user-friendly application designed to help hotel managers 
 
 ![Banner](https://raw.githubusercontent.com/mariosplen/Bookings/master/Screenshots/banner.png)
 
+## Download 
+
+You can download the latest version of the app [here](https://github.com/mariosplen/Bookings/releases/tag/v1.2.0)
+
 ## Features
 
 - The Bookings App is a desktop application that was built using Intellij, maven, the DAO pattern, JDK8, and SQLite as the database.
