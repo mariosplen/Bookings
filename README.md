@@ -6,7 +6,7 @@ The Bookings App is a user-friendly application designed to help hotel managers 
 
 ## Download 
 
-You can download the latest version of the app [here](https://github.com/mariosplen/Bookings/releases/tag/v1.2.0)
+You can download the latest version of the app [here](https://github.com/mariosplen/Bookings/releases/tag/v1.0.0)
 
 ## Features
 
